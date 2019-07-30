@@ -1,0 +1,47 @@
+<div id="signup" v-cloak>
+  <div class="container2" v-if="!cloudSuccess" style="padding-top:20px">
+    <h1 class="text-center">Crear una Cuenta</h1>
+    <div class="signup-form">
+      
+      <hr/>
+      <ajax-form action="signup" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedForm()" :handle-parsing="handleParsingForm">
+        <div class="form-group">
+          <label for="full-name">Nombres y Apellidos</label>
+          <input class="form-control" id="full-name" type="text"  :class="[formErrors.fullName ? 'is-invalid' : '']" v-model.trim="formData.fullName" placeholder="" autocomplete="name" focus-first>
+          <div class="invalid-feedback" v-if="formErrors.fullName">Por favor ingresa tus nombres y apellidos.</div>
+        </div>
+        <div class="form-group">
+          <label for="email-address">Correo Electronico</label>
+          <input class="form-control" id="email-address" type="email"  :class="[formErrors.emailAddress ? 'is-invalid' : '']" v-model.trim="formData.emailAddress" placeholder="" autocomplete="email">
+          <div class="invalid-feedback" v-if="formErrors.emailAddress">Por favor ingresa un correo electronico valido.</div>
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input class="form-control" id="password" type="password"  :class="[formErrors.password ? 'is-invalid' : '']" v-model.trim="formData.password" placeholder="" autocomplete="new-password">
+          <div class="invalid-feedback" v-if="formErrors.password">Por favor ingresa tu contraseña.</div>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirmar Contraseña</label>
+          <input class="form-control" id="confirm-password" type="password"  :class="[formErrors.confirmPassword ? 'is-invalid' : '']" v-model.trim="formData.confirmPassword" placeholder="" autocomplete="new-password">
+          <div class="invalid-feedback" v-if="formErrors.confirmPassword">Tu contraseña no coincide.</div>
+        </div>
+
+        <p class="text-danger" v-if="cloudError==='emailAlreadyInUse'"><small>Ya existe una cuenta con este correo electrónico, si has olvidado tu contraseña puedes recuperarla  <a href="password/forgot">aquí</a>.</small></p>
+        <p class="text-danger" v-else-if="cloudError"><small>An error occured while processing your request. Please check your information and try again, or <a href="/support">contact support</a> if the error persists.</small></p>
+        <div class="form-group">
+          <ajax-button type="submit" :syncing="syncing" class="btn-dark btn-lg btn-block">Crear Cuenta</ajax-button>
+        </div>
+      </ajax-form>
+      <p class="text-center">Ya tienes cuenta? <a href="/login">Inicia Sesión</a></p>
+    </div>
+  </div>
+  <div class="container" v-if="cloudSuccess">
+    <h1 class="text-center">Check your email!</h1>
+    <div class="success-message">
+      <hr/>
+      <p>Tu cuenta esta casi lista, puedes verificarlo en el correo que te hemos enviado <strong>{{formData.emailAddress}}</strong>.</p>
+      <p><a class="btn btn-outline-info" href="/">Go to dashboard</a></p>
+    </div>
+  </div>
+</div>
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>

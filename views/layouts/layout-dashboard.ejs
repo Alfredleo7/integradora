@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Proyecto MIDI</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="dependencies/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Angular DataTables-->
+    <link rel="stylesheet" type="text/css" href="/styles/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles/css/angular-datatables.css">
+    
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="dependencies/vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="styles/css/fontastic.css">
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <!-- jQuery Circle-->
+    <link rel="stylesheet" href="styles/css/grasp_mobile_progress_circle-1.0.0.min.css">
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" href="dependencies/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="styles/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="styles/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!--STYLES END-->
+  </head>
+
+  <body ng-app="app">
+    <div id="page-wrap">
+      <!-- Side Navbar -->
+    <nav class="side-navbar">
+      <div class="side-navbar-wrapper">
+        <!-- Sidebar Header    -->
+        <div class="sidenav-header d-flex align-items-center justify-content-center">
+          <!-- User Info-->
+          <div class="sidenav-header-inner text-center"><img src="images/logo.png" alt="person" class="img-fluid rounded-circle">
+            <h2 class="h5">Proyecto MIDI</h2><span>Dashboard</span>
+          </div>
+          <!-- Small Brand information, appears on minimized sidebar-->
+          <div class="sidenav-header-logo"><a href="/dashboard#/" class="brand-small text-center"> <strong>MI</strong><strong class="text-primary">DI</strong></a></div>
+        </div>
+        <!-- Sidebar Navigation Menus-->
+        <div id="activeMenu">
+          <div class="main-menu">
+            <h5 class="sidenav-heading">Gráficos</h5>
+            <ul id="side-main-menu" class="side-menu list-unstyled">                  
+              <li class="item active"><a href="/dashboard#/"> <i class="fa fa-chart-line"></i>General                             </a></li>
+              <li class="item"><a href="/dashboard#/especifico"> <i class="fa fa-chart-bar"></i>Específico                             </a></li>
+              <li class="item"><a href="/dashboard#/tablaPosiciones"> <i class="fas fa-list-ul"></i>Tabla Puntuaciones                             </a></li>
+              <li class="item"><a href="/dashboard#/comparaciones"> <i class="fas fa-columns"></i>Comparaciones                             </a></li>
+              <li class="item"><a href="/dashboard#/interpretacion"> <i class="fa fa-bar-chart"></i>Análisis de Niveles                             </a></li>
+              <li class="item"><a href="/dashboard#/analisisRooms"> <i class="fa fa-bar-chart"></i>Análisis de Salas                             </a></li>
+              <li class="item"><a href="/dashboard#/analisisNivel"> <i class="fa fa-bar-chart"></i>Preferencias de Niveles                             </a></li>
+              <!--<li class="item"><a href="/dashboard#/comparaciones"> <i class="icon-grid"></i>Comparar                             </a></li>-->
+            </ul>
+          </div>
+          <div class="admin-menu">
+            <h5 class="sidenav-heading">Reportes</h5>
+            <ul id="side-admin-menu" class="side-menu list-unstyled"> 
+              <li class="item"> <a href="/dashboard#/reporteJuegos"> <i class="far fa-file-alt"> </i>Juegos</a></li>
+              <li class="item"> <a href="/dashboard#/reporteNiños"> <i class="far fa-id-badge"> </i>Niños</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="page">
+      <!-- navbar-->
+      <header class="header">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <div class="navbar-holder d-flex align-items-center justify-content-between">
+              <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="fas fa-bars"> </i></a><a href="index.html" class="navbar-brand">
+                  <div class="brand-text d-none d-md-inline-block"><span> </span><strong class="text-primary">Dashboard</strong></div></a></div>
+              <div class="userName">Usuario: <%= me.nombre %></div>
+              <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                <!-- Log out-->
+                
+                <% if(me.isSuperAdmin){ %>
+                <li class="nav-item" style="padding-right: 10px"><a href="/admin"> <span class="d-none d-sm-inline-block">Administrador  </span><i class="fas fa-user-tie" style="padding-left: 5px"></i></a></li>
+                <li class="nav-item"><a href="/signup"> <span class="d-none d-sm-inline-block">Registrar</span><i class="fa fa-user"></i></a></li>
+                <% } %>
+                <li class="nav-item"><a href="/logout" class="nav-link logout"> <span class="d-none d-sm-inline-block">Cerrar Sesión</span><i class="fa fa-sign-out"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <section ng-view></section>
+
+      <footer class="main-footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6">
+              <p>Proyecto &copy; 2017-2019</p>
+            </div>
+            <div class="col-sm-6 text-right">
+              <p>Design by <a href="https://bootstrapious.com" class="external">Bootstrapious</a></p>
+              <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions and it helps me to run Bootstrapious. Thank you for understanding :)-->
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+
+    <% /*
+      Client-side JavaScript
+      ========================
+
+      Scripts can be hard-coded as «script» tags, automatically injected
+      by the asset pipeline between "SCRIPTS" and "SCRIPTS END", or both.
+      (https://sailsjs.com/docs/concepts/assets/task-automation)
+    */ %>
+
+    <% /* Load Stripe Checkout */ %>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+
+    <% /* Delete the global `self` to help avoid client-side bugs.
+    (see https://developer.mozilla.org/en-US/docs/Web/API/Window/self) */ %>
+    <script>delete window.self;</script>
+
+    <% /* Auto-injected «script» tags: */ %>
+    <!--SCRIPTS-->
+    <script src="/dependencies/sails.io.js"></script>
+    <script src="/dependencies/lodash.js"></script>
+    <script src="/dependencies/jquery.min.js"></script>
+    <script src="/dependencies/bowser.js"></script>
+    <script src="/dependencies/vue.js"></script>
+    <script src="/dependencies/jquery.dataTables.min.js"></script>
+    <script src="/dependencies/bootstrap-4/bootstrap-4.bundle.js"></script>
+    <script src="/dependencies/cloud.js"></script>
+    <script src="/dependencies/numbers.js"></script>
+    <script src="/dependencies/parasails.js"></script>
+    <script src="/dependencies/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/dependencies/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/dependencies/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="/dependencies/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/dependencies/vendor/chartjs/Chart.bundle.js"></script>
+    <script src="/dependencies/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="/dependencies/vendor/chartjs/Chart.js"></script>
+    <script src="/dependencies/vendor/chartjs/Chart.min.js"></script>
+    <script src="/dependencies/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/dependencies/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
+    <script src="/dependencies/vendor/popperjs/umd/popper-utils.js"></script>
+    <script src="/dependencies/vendor/popperjs/umd/popper-utils.min.js"></script>
+    <script src="/dependencies/vendor/popperjs/umd/popper.js"></script>
+    <script src="/dependencies/vendor/popperjs/umd/popper.min.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="/js/cloud.setup.js"></script>
+    <script src="/js/components/ajax-button.component.js"></script>
+    <script src="/js/components/ajax-form.component.js"></script>
+    <script src="/js/components/modal.component.js"></script>
+    <script src="/js/utilities/open-stripe-checkout.js"></script>
+    <script src="/appAngular/routes/rutas.js"></script>
+    <script src="/appAngular/controllers/analisisNivelController.js"></script>
+    <script src="/appAngular/controllers/analisisRoomsController.js"></script>
+    <script src="/appAngular/controllers/comparacionesController.js"></script>
+    <script src="/appAngular/controllers/controlador.js"></script>
+    <script src="/appAngular/controllers/especificoController.js"></script>
+    <script src="/appAngular/controllers/interpretacionController.js"></script>
+    <script src="/appAngular/controllers/reporteGameController.js"></script>
+    <script src="/appAngular/controllers/reporteNiñoController.js"></script>
+    <script src="/appAngular/controllers/resultados_metricas.js"></script>
+    <script src="/appAngular/controllers/tablaController.js"></script>
+    <script src="/appAngular/services/servicios.js"></script>
+    <!-- FUZZY_LOGIC -->
+    <script src="/appAngular/fuzzy_logic/fuzzy.js"></script>
+    <script src="/appAngular/fuzzy_logic/fuzzy_functions.js"></script>
+
+    <script src="/js/angular-datatables.js"></script>
+    <script src="/js/charts-home.js"></script>
+    <script src="/js/front.js"></script>
+    <script src="/js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
+    <script src="/js/pages/498.page.js"></script>
+    <script src="/js/pages/account/account-overview.page.js"></script>
+    <script src="/js/pages/account/edit-password.page.js"></script>
+    <script src="/js/pages/account/edit-profile.page.js"></script>
+    <script src="/js/pages/contact.page.js"></script>
+    <script src="/js/pages/dashboard/welcome.page.js"></script>
+    <script src="/js/pages/entrance/confirmed-email.page.js"></script>
+    <script src="/js/pages/entrance/forgot-password.page.js"></script>
+    <script src="/js/pages/entrance/login.page.js"></script>
+    <script src="/js/pages/entrance/new-password.page.js"></script>
+    <script src="/js/pages/entrance/signup.page.js"></script>
+    <script src="/js/pages/faq.page.js"></script>
+    <script src="/js/pages/homepage.page.js"></script>
+    <script src="/js/pages/legal/privacy.page.js"></script>
+    <script src="/js/pages/legal/terms.page.js"></script>
+    <!--SCRIPTS END-->
+    <script type="text/javascript">
+      
+      var header = document.getElementById("activeMenu");
+      var btns = header.getElementsByClassName("item");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        });
+      }
+      
+
+    </script>
+  </body>
+</html>

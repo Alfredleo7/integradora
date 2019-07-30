@@ -1,0 +1,70 @@
+/* your styles go here */
+
+.dashboard-titulo{
+	padding: 10px;
+	background-color: indianred;
+    color: white;
+}
+
+#titulo_juego{
+	text-align: center;
+}
+
+.noDatos{
+	padding-top: 30px;
+}
+
+.noDatos1{
+	font-size: 5vw;
+	font-weight: bold;
+	color: rgba(128,128,128,0.2);
+	text-align: center;
+}
+
+.container2{
+	max-width: 500px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.noDatos2{
+	font-size: 3vw;
+	font-weight: bold;
+	color: rgba(128,128,128,0.2);
+	text-align: center;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.tituloTabla{
+	text-align: center; 
+	font-size: 2.2vw; 
+	padding: 10px; 
+	margin-top: 1rem
+}
+
+#tituloSelect, #select{
+	display: inline;
+}
+
+.titulosPadding{
+	padding-top: 80px;
+}
+
+th{
+	background-color: #eaf2f8;
+}
+
+.userName{
+	color: white;
+	padding-right: 20px;
+	padding-left: 20px;
+	text-align: right;
+}
+
+.fa-user{
+	margin-left: 5px;
+}

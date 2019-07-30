@@ -1,0 +1,117 @@
+<div class="breadcrumb-holder" style="line-height: 50px">
+  <div class="row" style="padding-top: 5px; padding-right: 30px">
+
+      <div class="form-group col-md-2 col-ls-6" style="text-align: right; padding-top: 5px">
+          <div class="name" id="tituloSelectEsc"><strong class="text-uppercase">Elegir Escenario:</strong></div>
+      </div>
+      <div class="form-group col-md-2 col-ls-6">
+          <select class="form-control" id="escenario" name="escenario" ng-model="select.escenarioId" style="margin-top: 10px" ng-change="gameEscenario()">
+            <option ng-value="escenario.id" value="escenario.id" ng-repeat="escenario in escenarios">{{escenario.nombre.trim()}}</option>
+          </select>
+      </div>
+
+      <div class="form-group col-md-2 col-ls-6" style="text-align: right; padding-top: 5px">
+          <div class="name" id="tituloSelectGame"><strong class="text-uppercase">Elegir Juego:</strong></div>
+      </div>
+      <div class="form-group col-md-2 col-ls-6">
+          <select class="form-control" id="game" name="game" ng-model="select.gameId" style="margin-top: 10px" ng-change="nivelesGame()">
+            <option ng-value="game.id" value="game.id" ng-repeat="game in games">{{game.nombre.trim()}}</option>
+          </select>
+      </div>
+
+      <div class="form-group col-md-2 col-ls-6" style="text-align: right; padding-top: 5px">
+          <div class="name" id="tituloSelectLevel"><strong class="text-uppercase">Elegir Nivel:</strong></div>
+      </div>
+      <div class="form-group col-md-2 col-ls-6">
+          <select class="form-control" id="level" name="level" ng-model="select.levelId" style="margin-top: 10px">
+            <option ng-value="level.id" value="level.id" ng-repeat="level in levels_game">{{level.nombre.trim()}}</option>
+          </select>
+      </div>
+
+      <div class="col-md-1"></div>
+      <div class="form-group col-md-2 col-ls-6 text-center" >
+        <button class="btn btn-primary" ng-click="funcionLevel()" style="width: -webkit-fill-available">Mostrar</button>
+      </div>
+
+  </div>
+</div>
+
+<div style="padding: 20px">
+  <div class="container-fluid">
+    <div class="card" style="padding: 0 3rem">
+      <div class="tituloTabla">
+        Evaluaciones por Escenario
+      </div>
+      <hr>
+      <table datatable="ng" class="table table-bordered text-center" id="mytable">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Característica</th> 
+            <th scope="col">Nombre</th>
+            <th scope="col">Pregunta</th>
+            <th scope="col">Resultado</th>
+            <th scope="col">Interpretación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="resultado in resultados | orderBy: 'id'">
+            <th>{{$index+1}}</th>
+            <td>{{resultado.nombre_car}}</td>
+            <td>{{resultado.nombre}}</td>
+            <td>{{resultado.proposito}}</td>
+            <td>{{resultado.resultado}}</td>
+            <td>{{resultado.interpretacion}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> 
+</div>
+
+<div style="padding: 20px">
+  <div class="container-fluid">
+    <div class="card" style="padding: 0 3rem">
+      <div class="tituloTabla">
+        Valoración General
+      </div>
+      <hr>
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Métrica</th>
+            <th scope="col">Descripción</th> 
+            <th scope="col">Valoración</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1</th>
+            <td>Eficiencia</td>
+            <td class="text-left">Grado con el que pueden lograr las metas propuestas invirtiendo una cantidad apropiada de recursos en relación a la efectividad lograda.</td>
+            <td>{{caracteristicas.eficiencia.interpretacion}}</td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td>Efectividad</td>
+            <td class="text-left">Grado en el que pueden lograr las metas propuestas con precisión y completitud.</td>
+            <td>{{caracteristicas.efectividad.interpretacion}}</td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td>Flexibilidad</td>
+            <td class="text-left">Grado con el que se pueden variar las condiciones por prueba.</td>
+            <td>{{caracteristicas.flexibilidad.interpretacion}}</td>
+          </tr>
+          <tr>
+            <th>4</th>
+            <td>Satisfacción</td>
+            <td class="text-left">Grado con el que los jugadores se sienten bien al terminar una meta.</td>
+            <td>{{caracteristicas.satisfaccion.interpretacion}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> 
+</div>
