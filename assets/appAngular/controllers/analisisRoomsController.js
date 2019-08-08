@@ -176,24 +176,24 @@ app.controller('analisisRoomsController', ['$scope', '$rootScope', 'TodoService'
 
             $scope.caracteristicas = {
                 eficiencia: {
-                    valor: 0,
-                    interpretacion: '',
-                    crisp_input: []
+                    fuzzy: 0,
+                    descripcion: '',
+                    sets: []
                 },
                 efectividad: {
-                    valor: 0,
-                    interpretacion: '',
-                    crisp_input: []
+                    fuzzy: 0,
+                    descripcion: '',
+                    sets: []
                 },
                 flexibilidad: {
-                    valor: 0,
-                    interpretacion: '',
-                    crisp_input: []
+                    fuzzy: 0,
+                    descripcion: '',
+                    sets: []
                 },
                 satisfaccion: {
-                    valor: 0,
-                    interpretacion: '',
-                    crisp_input: []
+                    fuzzy: 0,
+                    descripcion: '',
+                    sets: []
                 }
             }
             
@@ -214,16 +214,19 @@ app.controller('analisisRoomsController', ['$scope', '$rootScope', 'TodoService'
                         resultado = TiempoMeta(tiempo_juego_ok).toFixed(2);
                         $scope.resultados[i].resultado = resultado + " seg";
                         $scope.resultados[i].resultado_valor = resultado;
+                        $scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_eficiencia.tiempo_meta)
                         break;
                     case 2:
                         resultado = EficienciaMeta(correctas_ok, (tiempo_juego/60)).toFixed(2);
                         $scope.resultados[i].resultado = resultado + " corr/min";
                         $scope.resultados[i].resultado_valor = resultado;
+                        $scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_eficiencia.eficiencia_respuestas_correctas)
                         break;
                     case 3:
                         resultado = EficienciaMetaPorIncorrectas(incorrectas_ok, (tiempo_juego/60)).toFixed(2);
                         $scope.resultados[i].resultado = resultado + " incorr/min";
                         $scope.resultados[i].resultado_valor = resultado;
+                        $scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_eficiencia.eficiencia_respuestas_incorrectas)
                         break;
                     case 4:
                         var best_time = 0, cont_best_time = 0;
@@ -240,6 +243,7 @@ app.controller('analisisRoomsController', ['$scope', '$rootScope', 'TodoService'
                         resultado = EficienciaRelativaUsuarioOK(cont_best_time, $scope.level.length).toFixed(2);
                         $scope.resultados[i].resultado = resultado + "%";
                         $scope.resultados[i].resultado_valor = resultado;
+                        $scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_eficiencia.relativa_mejores_resultados_jugadores)
                         break;
                     case 5:
                         var worst_time = 0, cont_worst_time = 0;
@@ -257,22 +261,26 @@ app.controller('analisisRoomsController', ['$scope', '$rootScope', 'TodoService'
                         resultado = EficienciaRelativaUsuarioBAD(cont_worst_time, $scope.level.length).toFixed(2);
                         $scope.resultados[i].resultado = resultado + "%";
                         $scope.resultados[i].resultado_valor = resultado;
+                        $scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_eficiencia.relativa_jugadores_dificultades_en_nivel)
                         break;
                     //Efectividad
                     case 6:
                         resultado = EfectividadMeta(n_right_prom, n_wrong_prom).toFixed(2);
                         $scope.resultados[i].resultado = resultado + "% aciertos";
                         $scope.resultados[i].resultado_valor = resultado;
+                        $scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_efectividad.efectividad_meta)
                         break;
                     case 7:
                         resultado = CompletitudMeta(n_user_complete, $scope.level.length).toFixed(2);
                         $scope.resultados[i].resultado = resultado + "% j. completaron";
                         $scope.resultados[i].resultado_valor = resultado;
+                        $scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_efectividad.completitud_meta)
                         break;
                     case 8:
                         resultado = FrecuenciaIntentosMeta(intentos_ok, correctas_ok).toFixed(2);
                         $scope.resultados[i].resultado = resultado + " intentos";
                         $scope.resultados[i].resultado_valor = resultado;
+                        $scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_efectividad.frecuencia_intentos_meta)
                         break;
                     //Flexibilidad
                     case 9:
@@ -280,10 +288,12 @@ app.controller('analisisRoomsController', ['$scope', '$rootScope', 'TodoService'
                         if (isNaN(resultado)){
                             $scope.resultados[i].resultado = "No hay Jugadores en Escenario por Default";
                             $scope.resultados[i].resultado_valor = 0;
+                            $scope.resultados[i].valoracion = fuzzification_variable(0, sets_flexibilidad.accesibilidad_por_metas)
                         }
                         else{
                             $scope.resultados[i].resultado = resultado;
                             $scope.resultados[i].resultado_valor = resultado;
+                            $scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_flexibilidad.accesibilidad_por_metas)
                         }
                         break;
                     case 10:
@@ -291,10 +301,12 @@ app.controller('analisisRoomsController', ['$scope', '$rootScope', 'TodoService'
                         if (isNaN(resultado)){
                             $scope.resultados[i].resultado = "No hay Jugadores en Escenario por Default";
                             $scope.resultados[i].resultado_valor = 0;
+                            $scope.resultados[i].valoracion = fuzzification_variable(0, sets_flexibilidad.accesibilidad_por_tiempo)
                         }
                         else {
                             $scope.resultados[i].resultado = resultado;
                             $scope.resultados[i].resultado_valor = resultado;
+                            $scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_flexibilidad.accesibilidad_por_tiempo)
                         }
                         break;
                     //Satisfaccion
@@ -302,35 +314,49 @@ app.controller('analisisRoomsController', ['$scope', '$rootScope', 'TodoService'
                         resultado = PreferenciaUso(n_user_complete, $scope.level, niveles, level_users).toFixed(3);
                         $scope.resultados[i].resultado = resultado + "%";
                         $scope.resultados[i].resultado_valor = resultado;
+                        $scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_satisfaccion.preferencia_uso)
                         break;
                     default:
                         break;
                 }
                 switch($scope.metricas[i].nombre_car) {
                     case 'Eficiencia':
-                        $scope.caracteristicas.eficiencia.crisp_input.push(Number($scope.resultados[i].resultado_valor));
+                        $scope.caracteristicas.eficiencia.sets.push($scope.resultados[i].valoracion);
                         break;
                     case 'Efectividad':
-                        $scope.caracteristicas.efectividad.crisp_input.push(Number($scope.resultados[i].resultado_valor));
+                        $scope.caracteristicas.efectividad.sets.push($scope.resultados[i].valoracion);
                         break;
                     case 'Flexibilidad':
-                        $scope.caracteristicas.flexibilidad.crisp_input.push(Number($scope.resultados[i].resultado_valor));
+                        $scope.caracteristicas.flexibilidad.sets.push($scope.resultados[i].valoracion);
                         break;
                     case 'Satisfacción':
-                        $scope.caracteristicas.satisfaccion.crisp_input.push(Number($scope.resultados[i].resultado_valor));
+                        $scope.caracteristicas.satisfaccion.sets.push($scope.resultados[i].valoracion);
                         break;
                     default:
                         break;
                 }
             }
-            $scope.caracteristicas.eficiencia.valor = get_eficiencia($scope.caracteristicas.eficiencia.crisp_input);
-            $scope.caracteristicas.efectividad.valor = get_efectividad($scope.caracteristicas.efectividad.crisp_input);
-            $scope.caracteristicas.flexibilidad.valor = get_flexibilidad($scope.caracteristicas.flexibilidad.crisp_input);
-            $scope.caracteristicas.satisfaccion.valor = get_satisfaccion($scope.caracteristicas.satisfaccion.crisp_input);
-            $scope.caracteristicas.eficiencia.interpretacion = get_interpretacion($scope.caracteristicas.eficiencia.valor);
-            $scope.caracteristicas.efectividad.interpretacion = get_interpretacion($scope.caracteristicas.efectividad.valor);
-            $scope.caracteristicas.flexibilidad.interpretacion = get_interpretacion($scope.caracteristicas.flexibilidad.valor);
-            $scope.caracteristicas.satisfaccion.interpretacion = get_interpretacion($scope.caracteristicas.satisfaccion.valor);
+
+            let index_eficiencia = $scope.caracteristicas.eficiencia.sets.map(fuz_var=>fuz_var.fuzzy);
+            $scope.caracteristicas.eficiencia.fuzzy = get_fuzzy_var_by_index(REGLAS_EFICIENCIA, index_eficiencia);
+            let index_efectividad = $scope.caracteristicas.efectividad.sets.map(fuz_var=>fuz_var.fuzzy);
+            $scope.caracteristicas.efectividad.fuzzy = get_fuzzy_var_by_index(REGLAS_EFECTIVIDAD, index_efectividad);
+            let index_flexibilidad = $scope.caracteristicas.flexibilidad.sets.map(fuz_var=>fuz_var.fuzzy);
+            $scope.caracteristicas.flexibilidad.fuzzy = get_fuzzy_var_by_index(REGLAS_FLEXIBILIDAD, index_flexibilidad);
+            let index_satisfaccion = $scope.caracteristicas.satisfaccion.sets.map(fuz_var=>fuz_var.fuzzy);
+            $scope.caracteristicas.satisfaccion.fuzzy = get_fuzzy_var_by_index(REGLAS_SATISFACCION, index_satisfaccion);
+
+            $scope.get_assessment = (index) => {
+                return ['Bajo', 'Medio', 'Alto'][index]
+            }
+            // $scope.caracteristicas.eficiencia.valor = get_eficiencia($scope.caracteristicas.eficiencia.crisp_input);
+            // $scope.caracteristicas.efectividad.valor = get_efectividad($scope.caracteristicas.efectividad.crisp_input);
+            // $scope.caracteristicas.flexibilidad.valor = get_flexibilidad($scope.caracteristicas.flexibilidad.crisp_input);
+            // $scope.caracteristicas.satisfaccion.valor = get_satisfaccion($scope.caracteristicas.satisfaccion.crisp_input);
+            // $scope.caracteristicas.eficiencia.interpretacion = get_interpretacion($scope.caracteristicas.eficiencia.valor);
+            // $scope.caracteristicas.efectividad.interpretacion = get_interpretacion($scope.caracteristicas.efectividad.valor);
+            // $scope.caracteristicas.flexibilidad.interpretacion = get_interpretacion($scope.caracteristicas.flexibilidad.valor);
+            // $scope.caracteristicas.satisfaccion.interpretacion = get_interpretacion($scope.caracteristicas.satisfaccion.valor);
             console.log($scope.caracteristicas);
         });
     }

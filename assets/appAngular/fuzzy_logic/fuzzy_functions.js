@@ -1,210 +1,366 @@
-var get_eficiencia = (crisp_input) => {
-    let fl = new FuzzyLogic();
-    let tiempo_meta = 200;
-    let eficiencia_respuestas_correctas = 5;
-    let eficiencia_respuestas_incorrectas = 4;
-    let relativa_mejores_resultados_jugadores = 100;
-    let relativa_jugadores_dificultades_en_nivel = 100;
+var construct_variable = (set) => {
+    var obv = [],
+        i;
 
-    return fl.getResult({
-        crisp_input: crisp_input,
-        variables_input: [
-            {
-                name: "Tiempo de meta",
-                setsName: ["Bajo", "Medio", "Alto"],
-                sets: [
-                    [tiempo_meta * 0, 0, tiempo_meta * 0.1, tiempo_meta * 0.5],
-                    [tiempo_meta * 0.1, tiempo_meta * 0.5, tiempo_meta * 0.5, tiempo_meta * 0.9],
-                    [tiempo_meta * 0.5, tiempo_meta * 0.9, tiempo_meta * 1, tiempo_meta * 1]
-                ]
-            },
-            {
-                name: "Eficiencia de meta por respuestas correctas",
-                setsName: ["Bajo", "Medio", "Alto"],
-                sets: [
-                    [eficiencia_respuestas_correctas * 0, eficiencia_respuestas_correctas * 0, eficiencia_respuestas_correctas * 0.1, eficiencia_respuestas_correctas * 0.5],
-                    [eficiencia_respuestas_correctas * 0.1, eficiencia_respuestas_correctas * 0.5, eficiencia_respuestas_correctas * 0.5, eficiencia_respuestas_correctas * 0.9],
-                    [eficiencia_respuestas_correctas * 0.5, eficiencia_respuestas_correctas * 0.9, eficiencia_respuestas_correctas * 1, eficiencia_respuestas_correctas * 1]
-                ]
-            },
-            {
-                name: "Eficiencia de meta por respuestas incorrectas",
-                setsName: ["Bajo", "Medio", "Alto"],
-                sets: [
-                    [eficiencia_respuestas_incorrectas * 0, eficiencia_respuestas_incorrectas * 0, eficiencia_respuestas_incorrectas * 0.1, eficiencia_respuestas_incorrectas * 0.5],
-                    [eficiencia_respuestas_incorrectas * 0.1, eficiencia_respuestas_incorrectas * 0.5, eficiencia_respuestas_incorrectas * 0.5, eficiencia_respuestas_incorrectas * 0.9],
-                    [eficiencia_respuestas_incorrectas * 0.5, eficiencia_respuestas_incorrectas * 0.9, eficiencia_respuestas_incorrectas * 1, eficiencia_respuestas_incorrectas * 1]
-                ]
-            },
-            {
-                name: "Eficiencia relativa a los mejores resultados de jugadores",
-                setsName: ["Bajo", "Medio", "Alto"],
-                sets: [
-                    [relativa_mejores_resultados_jugadores * 0, relativa_mejores_resultados_jugadores * 0, relativa_mejores_resultados_jugadores * 0.1, relativa_mejores_resultados_jugadores * 0.5],
-                    [relativa_mejores_resultados_jugadores * 0.1, relativa_mejores_resultados_jugadores * 0.5, relativa_mejores_resultados_jugadores * 0.5, relativa_mejores_resultados_jugadores * 0.9],
-                    [relativa_mejores_resultados_jugadores * 0.5, relativa_mejores_resultados_jugadores * 0.9, relativa_mejores_resultados_jugadores * 1, relativa_mejores_resultados_jugadores * 1]
-                ]
-            },
-            {
-                name: "Eficiencia relativa a los jugadores con dificultades en el nivel",
-                setsName: ["Bajo", "Medio", "Alto"],
-                sets: [
-                    [relativa_jugadores_dificultades_en_nivel * 0, relativa_jugadores_dificultades_en_nivel * 0, relativa_jugadores_dificultades_en_nivel * 0.1, relativa_jugadores_dificultades_en_nivel * 0.5],
-                    [relativa_jugadores_dificultades_en_nivel * 0.1, relativa_jugadores_dificultades_en_nivel * 0.5, relativa_jugadores_dificultades_en_nivel * 0.5, relativa_jugadores_dificultades_en_nivel * 0.9],
-                    [relativa_jugadores_dificultades_en_nivel * 0.5, relativa_jugadores_dificultades_en_nivel * 0.9, relativa_jugadores_dificultades_en_nivel * 1, relativa_jugadores_dificultades_en_nivel * 1]
-                ]
-            }
-        ],
-        variable_output: {
-            name: "Eficiencia",
-            setsName: ["Baja", "Media", "Alta"],
-            sets: [
-                [0, 0, 0.1, 0.5],
-                [0.1, 0.5, 0.5, 0.9],
-                [0.5, 0.9, 1, 1]
-            ]
-        },
-        inferences: [
-            [0, 2, 0],
-            [0, 1, 2],
-            [2, 1, 0],
-            [0, 1, 2],
-            [2, 1, 0]
-        ]
-    })
+    for (i = set.length - 1; i >= 0; i -= 1) {
+        obv[i] = {
+            a: set[i],
+            firstPoint: (set[i][0] === set[i][1]) ? 1 : 0,
+            lastPoint: (set[i][2] === set[i][3]) ? 1 : 0,
+            mUp: (1 / (set[i][1] - set[i][0])),
+            mDown: (1 / (set[i][3] - set[i][2]))
+        };
+    }
+    return obv;
 }
 
-var get_efectividad = (crisp_input) => {
-    let fl = new FuzzyLogic();
-    let efectividad_en_la_meta = 100;
-    let completitud_en_la_meta = 100;
-    let frecuencia_intentos_por_meta = 10;
+var fuzzification_function = (x, set) => {
+    var f = 0;
 
-    return fl.getResult({
-        crisp_input: crisp_input,
-        variables_input: [
-            {
-                name: "Efectividad en la meta",
-                setsName: ["Bajo", "Medio", "Alto"],
-                sets: [
-                    [efectividad_en_la_meta * 0, efectividad_en_la_meta * 0, efectividad_en_la_meta * 0.1, efectividad_en_la_meta * 0.5],
-                    [efectividad_en_la_meta * 0.1, efectividad_en_la_meta * 0.5, efectividad_en_la_meta * 0.5, efectividad_en_la_meta * 0.9],
-                    [efectividad_en_la_meta * 0.5, efectividad_en_la_meta * 0.9, efectividad_en_la_meta * 1, efectividad_en_la_meta * 1]
-                ]
-            },
-            {
-                name: "Completitud de la meta",
-                setsName: ["Bajo", "Medio", "Alto"],
-                sets: [
-                    [completitud_en_la_meta * 0, completitud_en_la_meta * 0, completitud_en_la_meta * 0.1, completitud_en_la_meta * 0.5],
-                    [completitud_en_la_meta * 0.1, completitud_en_la_meta * 0.5, completitud_en_la_meta * 0.5, completitud_en_la_meta * 0.9],
-                    [completitud_en_la_meta * 0.5, completitud_en_la_meta * 0.9, completitud_en_la_meta * 1, completitud_en_la_meta * 1]
-                ]
-            },
-            {
-                name: "Frecuencia de intentos por meta",
-                setsName: ["Bajo", "Medio", "Alto"],
-                sets: [
-                    [frecuencia_intentos_por_meta * 0, frecuencia_intentos_por_meta * 0, frecuencia_intentos_por_meta * 0.1, frecuencia_intentos_por_meta * 0.5],
-                    [frecuencia_intentos_por_meta * 0.1, frecuencia_intentos_por_meta * 0.5, frecuencia_intentos_por_meta * 0.5, frecuencia_intentos_por_meta * 0.9],
-                    [frecuencia_intentos_por_meta * 0.5, frecuencia_intentos_por_meta * 0.9, frecuencia_intentos_por_meta * 1, frecuencia_intentos_por_meta * 1]
-                ]
+    if (x <= set.a[0]) {
+        f = set.firstPoint;
+    } else {
+        if (x < set.a[1]) {
+            f = set.mUp * (x - set.a[0]);
+        } else {
+            if (x <= set.a[2]) {
+                f = 1;
+            } else {
+                if (x < set.a[3]) {
+                    f = 1 - set.mDown * (x - set.a[2]);
+                } else {
+                    if (x >= set.a[3]) {
+                        f = set.lastPoint;
+                    }
+                }
             }
-        ],
-        variable_output: {
-            name: "Efectividad",
-            setsName: ["Baja", "Media", "Alta"],
-            sets: [
-                [0, 0, 0.1, 0.5],
-                [0.1, 0.5, 0.5, 0.9],
-                [0.5, 0.9, 1, 1]
-            ]
-        },
-        inferences: [
-            [0, 2, 0],
-            [0, 1, 2],
-            [2, 1, 0]
-        ]
-    })
+        }
+    }
+
+    return f;
 }
 
-var get_flexibilidad = (crisp_input) => {
-    let fl = new FuzzyLogic();
-    let flexibilidad_por_metas = 10;
-    let flexibilidad_por_tiempo = 200;
+var fuzzification_variable = (x, sets) => {
+    var valori = [],
+        i;
+    let SET_FUZZYS = ['Baja', 'Media', 'Alta']
+    sets_constructed = construct_variable(sets);
 
-    return fl.getResult({
-        crisp_input: crisp_input,
-        variables_input: [
-            {
-                name: "Flexibilidad por metas",
-                setsName: ["Bajo", "Medio", "Alto"],
-                sets: [
-                    [flexibilidad_por_metas * 0, flexibilidad_por_metas * 0, flexibilidad_por_metas * 0.1, flexibilidad_por_metas * 0.5],
-                    [flexibilidad_por_metas * 0.1, flexibilidad_por_metas * 0.5, flexibilidad_por_metas * 0.5, flexibilidad_por_metas * 0.9],
-                    [flexibilidad_por_metas * 0.5, flexibilidad_por_metas * 0.9, flexibilidad_por_metas * 1, flexibilidad_por_metas * 1]
-                ]
-            },
-            {
-                name: "Flexibilidad por tiempo",
-                setsName: ["Bajo", "Medio", "Alto"],
-                sets: [
-                    [flexibilidad_por_tiempo * 0, flexibilidad_por_tiempo * 0, flexibilidad_por_tiempo * 0.1, flexibilidad_por_tiempo * 0.5],
-                    [flexibilidad_por_tiempo * 0.1, flexibilidad_por_tiempo * 0.5, flexibilidad_por_tiempo * 0.5, flexibilidad_por_tiempo * 0.9],
-                    [flexibilidad_por_tiempo * 0.5, flexibilidad_por_tiempo * 0.9, flexibilidad_por_tiempo * 1, flexibilidad_por_tiempo * 1]
-                ]
-            }
-        ],
-        variable_output: {
-            name: "Flexibilidad",
-            setsName: ["Baja", "Media", "Alta"],
-            sets: [
-                [0, 0, 0.1, 0.5],
-                [0.1, 0.5, 0.5, 0.9],
-                [0.5, 0.9, 1, 1]
-            ]
-        },
-        inferences: [
-            [0, 2, 0],
-            [0, 1, 2]
-        ]
-    })
+    for (i = sets.length - 1; i >= 0; i -= 1) {
+        valori[i] = fuzzification_function(x, sets_constructed[i]);
+    }
+
+    let index_max = valori.indexOf(Math.max(...valori))
+
+    return { fuzzy: index_max, description: SET_FUZZYS[index_max]}
 }
 
-var get_satisfaccion = (crisp_input) => {
-    let fl = new FuzzyLogic();
-    let preferencias_uso_respecto_del_nivel_vs_resto_niveles = 100;
 
-    return fl.getResult({
-        crisp_input: crisp_input,
-        variables_input: [
-            {
-                name: "Preferencias de uso con respecto del nivel vs el resto de niveles",
-                setsName: ["Bajo", "Medio", "Alto"],
-                sets: [
-                    [preferencias_uso_respecto_del_nivel_vs_resto_niveles * 0, preferencias_uso_respecto_del_nivel_vs_resto_niveles * 0, preferencias_uso_respecto_del_nivel_vs_resto_niveles * 0.1, preferencias_uso_respecto_del_nivel_vs_resto_niveles * 0.5],
-                    [preferencias_uso_respecto_del_nivel_vs_resto_niveles * 0.1, preferencias_uso_respecto_del_nivel_vs_resto_niveles * 0.5, preferencias_uso_respecto_del_nivel_vs_resto_niveles * 0.5, preferencias_uso_respecto_del_nivel_vs_resto_niveles * 0.9],
-                    [preferencias_uso_respecto_del_nivel_vs_resto_niveles * 0.5, preferencias_uso_respecto_del_nivel_vs_resto_niveles * 0.9, preferencias_uso_respecto_del_nivel_vs_resto_niveles * 1, preferencias_uso_respecto_del_nivel_vs_resto_niveles * 1]
-                ]
-            }
-        ],
-        variable_output: {
-            name: "Satisfacción",
-            setsName: ["Baja", "Media", "Alta"],
-            sets: [
-                [0, 0, 0.1, 0.5],
-                [0.1, 0.5, 0.5, 0.9],
-                [0.5, 0.9, 1, 1]
-            ]
-        },
-        inferences: [
-            [0, 2, 0]
-        ]
-    })
+let get_value_of_set = (max, min, value_porc) => {
+    return (max - min) * value_porc + min;
 }
 
-var get_interpretacion = (valor) => {
-    if( valor >= 0.3334 ) return 'Alto';
-    if( valor >= 0.1666 ) return 'Medio';
-    return 'Bajo'
+// EFICIENCIA MAX MIN
+let tiempo_meta_range = {
+    max: 1,
+    min: 0
+}
+
+let eficiencia_respuestas_correctas = {
+    max: 1,
+    min: 0
+}
+
+let eficiencia_respuestas_incorrectas = {
+    max: 1,
+    min: 0
+}
+
+let relativa_mejores_resultados_jugadores = {
+    max: 1,
+    min: 0
+}
+
+let relativa_jugadores_dificultades_en_nivel = {
+    max: 1,
+    min: 0
+}
+
+// EFICIENCIA SETS
+let sets_eficiencia = {
+    tiempo_meta: [
+        [
+            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0),
+            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0),
+            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0.1),
+            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0.5)
+        ],
+        [
+            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0.1),
+            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0.5),
+            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0.5),
+            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0.9)
+        ],
+        [
+            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0.5),
+            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0.9),
+            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 1),
+            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 1)
+        ]
+    ],
+    eficiencia_respuestas_correctas: [
+        [
+            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0),
+            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0),
+            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0.1),
+            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0.5)
+        ],
+        [
+            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0.1),
+            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0.5),
+            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0.5),
+            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0.9)
+        ],
+        [
+            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0.5),
+            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0.9),
+            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 1),
+            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 1)
+        ]
+    ],
+    eficiencia_respuestas_incorrectas: [
+        [
+            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0),
+            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0),
+            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0.1),
+            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0.5)
+        ],
+        [
+            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0.1),
+            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0.5),
+            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0.5),
+            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0.9)
+        ],
+        [
+            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0.5),
+            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0.9),
+            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 1),
+            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 1)
+        ]
+    ],
+    relativa_mejores_resultados_jugadores: [
+        [
+            get_value_of_set(relativa_mejores_resultados_jugadores.max, relativa_mejores_resultados_jugadores.min, 0),
+            get_value_of_set(relativa_mejores_resultados_jugadores.max, relativa_mejores_resultados_jugadores.min, 0),
+            get_value_of_set(relativa_mejores_resultados_jugadores.max, relativa_mejores_resultados_jugadores.min, 0.1),
+            get_value_of_set(relativa_mejores_resultados_jugadores.max, relativa_mejores_resultados_jugadores.min, 0.5)
+        ],
+        [
+            get_value_of_set(relativa_mejores_resultados_jugadores.max, relativa_mejores_resultados_jugadores.min, 0.1),
+            get_value_of_set(relativa_mejores_resultados_jugadores.max, relativa_mejores_resultados_jugadores.min, 0.5),
+            get_value_of_set(relativa_mejores_resultados_jugadores.max, relativa_mejores_resultados_jugadores.min, 0.5),
+            get_value_of_set(relativa_mejores_resultados_jugadores.max, relativa_mejores_resultados_jugadores.min, 0.9)
+        ],
+        [
+            get_value_of_set(relativa_mejores_resultados_jugadores.max, relativa_mejores_resultados_jugadores.min, 0.5),
+            get_value_of_set(relativa_mejores_resultados_jugadores.max, relativa_mejores_resultados_jugadores.min, 0.9),
+            get_value_of_set(relativa_mejores_resultados_jugadores.max, relativa_mejores_resultados_jugadores.min, 1),
+            get_value_of_set(relativa_mejores_resultados_jugadores.max, relativa_mejores_resultados_jugadores.min, 1)
+        ]
+    ],
+    relativa_jugadores_dificultades_en_nivel: [
+        [
+            get_value_of_set(relativa_jugadores_dificultades_en_nivel.max, relativa_jugadores_dificultades_en_nivel.min, 0),
+            get_value_of_set(relativa_jugadores_dificultades_en_nivel.max, relativa_jugadores_dificultades_en_nivel.min, 0),
+            get_value_of_set(relativa_jugadores_dificultades_en_nivel.max, relativa_jugadores_dificultades_en_nivel.min, 0.1),
+            get_value_of_set(relativa_jugadores_dificultades_en_nivel.max, relativa_jugadores_dificultades_en_nivel.min, 0.5)
+        ],
+        [
+            get_value_of_set(relativa_jugadores_dificultades_en_nivel.max, relativa_jugadores_dificultades_en_nivel.min, 0.1),
+            get_value_of_set(relativa_jugadores_dificultades_en_nivel.max, relativa_jugadores_dificultades_en_nivel.min, 0.5),
+            get_value_of_set(relativa_jugadores_dificultades_en_nivel.max, relativa_jugadores_dificultades_en_nivel.min, 0.5),
+            get_value_of_set(relativa_jugadores_dificultades_en_nivel.max, relativa_jugadores_dificultades_en_nivel.min, 0.9)
+        ],
+        [
+            get_value_of_set(relativa_jugadores_dificultades_en_nivel.max, relativa_jugadores_dificultades_en_nivel.min, 0.5),
+            get_value_of_set(relativa_jugadores_dificultades_en_nivel.max, relativa_jugadores_dificultades_en_nivel.min, 0.9),
+            get_value_of_set(relativa_jugadores_dificultades_en_nivel.max, relativa_jugadores_dificultades_en_nivel.min, 1),
+            get_value_of_set(relativa_jugadores_dificultades_en_nivel.max, relativa_jugadores_dificultades_en_nivel.min, 1)
+        ]
+    ]
+}
+
+// EFECTIVIDAD MAX MIN
+let efectividad_meta = {
+    max: 1,
+    min: 0
+}
+let completitud_meta = {
+    max: 1,
+    min: 0
+}
+let frecuencia_intentos_meta = {
+    max: 1,
+    min: 0
+}
+
+// EFECTIVIDAD SETS
+let sets_efectividad = {
+    efectividad_meta: [
+        [
+            get_value_of_set(efectividad_meta.max, efectividad_meta.min, 0),
+            get_value_of_set(efectividad_meta.max, efectividad_meta.min, 0),
+            get_value_of_set(efectividad_meta.max, efectividad_meta.min, 0.1),
+            get_value_of_set(efectividad_meta.max, efectividad_meta.min, 0.5)
+        ],
+        [
+            get_value_of_set(efectividad_meta.max, efectividad_meta.min, 0.1),
+            get_value_of_set(efectividad_meta.max, efectividad_meta.min, 0.5),
+            get_value_of_set(efectividad_meta.max, efectividad_meta.min, 0.5),
+            get_value_of_set(efectividad_meta.max, efectividad_meta.min, 0.9)
+        ],
+        [
+            get_value_of_set(efectividad_meta.max, efectividad_meta.min, 0.5),
+            get_value_of_set(efectividad_meta.max, efectividad_meta.min, 0.9),
+            get_value_of_set(efectividad_meta.max, efectividad_meta.min, 1),
+            get_value_of_set(efectividad_meta.max, efectividad_meta.min, 1)
+        ]
+    ],
+    completitud_meta: [
+        [
+            get_value_of_set(completitud_meta.max, completitud_meta.min, 0),
+            get_value_of_set(completitud_meta.max, completitud_meta.min, 0),
+            get_value_of_set(completitud_meta.max, completitud_meta.min, 0.1),
+            get_value_of_set(completitud_meta.max, completitud_meta.min, 0.5)
+        ],
+        [
+            get_value_of_set(completitud_meta.max, completitud_meta.min, 0.1),
+            get_value_of_set(completitud_meta.max, completitud_meta.min, 0.5),
+            get_value_of_set(completitud_meta.max, completitud_meta.min, 0.5),
+            get_value_of_set(completitud_meta.max, completitud_meta.min, 0.9)
+        ],
+        [
+            get_value_of_set(completitud_meta.max, completitud_meta.min, 0.5),
+            get_value_of_set(completitud_meta.max, completitud_meta.min, 0.9),
+            get_value_of_set(completitud_meta.max, completitud_meta.min, 1),
+            get_value_of_set(completitud_meta.max, completitud_meta.min, 1)
+        ]
+    ],
+    frecuencia_intentos_meta: [
+        [
+            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0),
+            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0),
+            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0.1),
+            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0.5)
+        ],
+        [
+            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0.1),
+            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0.5),
+            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0.5),
+            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0.9)
+        ],
+        [
+            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0.5),
+            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0.9),
+            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 1),
+            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 1)
+        ]
+    ]
+}
+
+// FLEXIBILIDAD MAX MIN
+let accesibilidad_por_metas = {
+    max: 1,
+    min: 0
+}
+let accesibilidad_por_tiempo = {
+    max: 1,
+    min: 0
+}
+
+// FLEXIBILIDAD SETS
+let sets_flexibilidad = {
+    accesibilidad_por_metas: [
+        [
+            get_value_of_set(accesibilidad_por_metas.max, accesibilidad_por_metas.min, 0),
+            get_value_of_set(accesibilidad_por_metas.max, accesibilidad_por_metas.min, 0),
+            get_value_of_set(accesibilidad_por_metas.max, accesibilidad_por_metas.min, 0.1),
+            get_value_of_set(accesibilidad_por_metas.max, accesibilidad_por_metas.min, 0.5)
+        ],
+        [
+            get_value_of_set(accesibilidad_por_metas.max, accesibilidad_por_metas.min, 0.1),
+            get_value_of_set(accesibilidad_por_metas.max, accesibilidad_por_metas.min, 0.5),
+            get_value_of_set(accesibilidad_por_metas.max, accesibilidad_por_metas.min, 0.5),
+            get_value_of_set(accesibilidad_por_metas.max, accesibilidad_por_metas.min, 0.9)
+        ],
+        [
+            get_value_of_set(accesibilidad_por_metas.max, accesibilidad_por_metas.min, 0.5),
+            get_value_of_set(accesibilidad_por_metas.max, accesibilidad_por_metas.min, 0.9),
+            get_value_of_set(accesibilidad_por_metas.max, accesibilidad_por_metas.min, 1),
+            get_value_of_set(accesibilidad_por_metas.max, accesibilidad_por_metas.min, 1)
+        ]
+    ],
+    accesibilidad_por_tiempo: [
+        [
+            get_value_of_set(accesibilidad_por_tiempo.max, accesibilidad_por_tiempo.min, 0),
+            get_value_of_set(accesibilidad_por_tiempo.max, accesibilidad_por_tiempo.min, 0),
+            get_value_of_set(accesibilidad_por_tiempo.max, accesibilidad_por_tiempo.min, 0.1),
+            get_value_of_set(accesibilidad_por_tiempo.max, accesibilidad_por_tiempo.min, 0.5)
+        ],
+        [
+            get_value_of_set(accesibilidad_por_tiempo.max, accesibilidad_por_tiempo.min, 0.1),
+            get_value_of_set(accesibilidad_por_tiempo.max, accesibilidad_por_tiempo.min, 0.5),
+            get_value_of_set(accesibilidad_por_tiempo.max, accesibilidad_por_tiempo.min, 0.5),
+            get_value_of_set(accesibilidad_por_tiempo.max, accesibilidad_por_tiempo.min, 0.9)
+        ],
+        [
+            get_value_of_set(accesibilidad_por_tiempo.max, accesibilidad_por_tiempo.min, 0.5),
+            get_value_of_set(accesibilidad_por_tiempo.max, accesibilidad_por_tiempo.min, 0.9),
+            get_value_of_set(accesibilidad_por_tiempo.max, accesibilidad_por_tiempo.min, 1),
+            get_value_of_set(accesibilidad_por_tiempo.max, accesibilidad_por_tiempo.min, 1)
+        ]
+    ]
+}
+
+// SATISFACCION MAX MIN
+let preferencia_uso = {
+    max: 1,
+    min: 0
+}
+
+// SATISFACCION SETS
+let sets_satisfaccion = {
+    preferencia_uso: [
+        [
+            get_value_of_set(preferencia_uso.max, preferencia_uso.min, 0),
+            get_value_of_set(preferencia_uso.max, preferencia_uso.min, 0),
+            get_value_of_set(preferencia_uso.max, preferencia_uso.min, 0.1),
+            get_value_of_set(preferencia_uso.max, preferencia_uso.min, 0.5)
+        ],
+        [
+            get_value_of_set(preferencia_uso.max, preferencia_uso.min, 0.1),
+            get_value_of_set(preferencia_uso.max, preferencia_uso.min, 0.5),
+            get_value_of_set(preferencia_uso.max, preferencia_uso.min, 0.5),
+            get_value_of_set(preferencia_uso.max, preferencia_uso.min, 0.9)
+        ],
+        [
+            get_value_of_set(preferencia_uso.max, preferencia_uso.min, 0.5),
+            get_value_of_set(preferencia_uso.max, preferencia_uso.min, 0.9),
+            get_value_of_set(preferencia_uso.max, preferencia_uso.min, 1),
+            get_value_of_set(preferencia_uso.max, preferencia_uso.min, 1)
+        ]
+    ]
+}
+
+let get_fuzzy_var_by_index = (obj, indexs) => {
+    let fuzzy_var;
+    if(indexs.length) {
+        fuzzy_var = obj;
+        indexs.forEach(
+            index => {
+                fuzzy_var = fuzzy_var[index]
+            }
+        )
+    }
+    return fuzzy_var;
 }
