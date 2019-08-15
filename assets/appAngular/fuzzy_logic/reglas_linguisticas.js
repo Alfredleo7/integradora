@@ -1,3 +1,26 @@
+eficiencia_erroneas = {
+        //correcta baja-incorrecta baja (Resultado inconsistente)
+        cbib: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es baja por ende la eficiencia por respuestas incorrectas debería ser alta y no baja como se ve',
+        //correcta baja-incorrecta media (Resultado que no se puede dar)
+        cbim: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es baja por ende la eficiencia por respuestas incorrectas debería ser alta y no media',
+        //correcta media-incorrecta baja (Resultado que no se puede dar)
+        cmib: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es medio por ende la eficiencia por respuestas incorrectas tambien debería ser media y no baja',
+        //correcta alta-incorrecta alta (Resultado que no se puede dar)
+        caia: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es alta por ende la eficiencia por respuestas incorrectas debería ser baja y no alta',
+        //correcta alta-incorrecta alta (Resultado que no se puede dar)
+        caim: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es alta por ende la eficiencia por respuestas incorrectas debería ser baja y no alta',
+        //correcta media-incorrecta baja (Resultado que no se puede dar)
+        cmib: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es medio por ende la eficiencia por respuestas incorrectas tambien debería ser media y no baja',
+        //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
+        bbwb: 'Resultado Incoherente debido a que si la eficiencia relativa a los mejores resultados de los jugadores es media por ende la eficiencia relativa a los jugadores con dificultades en el nivel tambien debería ser media',
+        //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
+        //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
+        //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
+        bawm: 'Resultado Incoherente debido a que si la  la eficiencia relativa a los jugadores con dificultades es media por ende la eficiencia relativa a los mejores resultados de los jugadores tambien debería ser media',
+        //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
+        bmwa: 'Resultado Incoherente debido a que si la eficiencia relativa a los mejores resultados de los jugadores es media por ende la eficiencia relativa a los jugadores con dificultades en el nivel tambien debería ser media',
+    }
+
 REGLAS_EFICIENCIA = [
     // TIEMPO META
     // BAJA
@@ -15,17 +38,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // MEDIA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: eficiencia_erroneas.cbib
                     }
                 ],
                 // MEDIA
@@ -33,17 +56,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo por ende la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // MEDIA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo por ende la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo por ende la eficiencia por respuestas incorrectas debería ser alta'
                     }
                 ],
                 // ALTA
@@ -51,17 +74,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo por ende la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // MEDIA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo por ende la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo por ende la eficiencia por respuestas incorrectas debería ser alta'
                     }
                 ]
             ],
@@ -74,17 +97,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo por ende la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // MEDIA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo por ende la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo por ende la eficiencia por respuestas incorrectas debería ser alta'
                     }
                 ],
                 // MEDIA
@@ -92,17 +115,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo, por lo contrario, la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // MEDIA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo, por lo contrario, la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo, por lo contrario, la eficiencia por respuestas incorrectas debería ser alta'
                     }
                 ],
                 // ALTA
@@ -110,17 +133,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo, por lo contrario, la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // MEDIA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo, por lo contrario, la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es baja, por lo contrario, la eficiencia por respuestas incorrectas debería ser alta'
                     }
                 ]
             ],
@@ -1904,7 +1927,7 @@ REGLAS_SATISFACCION = [
         conclusion: ''
     },
     // ALTA
-    { 
+    {
         resultado: 0,
         conclusion: ''
     }
