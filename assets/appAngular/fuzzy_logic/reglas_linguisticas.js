@@ -1,25 +1,25 @@
-EFICIENCIA_ERRONEA = {
-    //correcta baja-incorrecta baja (Resultado inconsistente)
-    cbib: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es baja por ende la eficiencia por respuestas incorrectas debería ser alta y no baja como se ve',
-    //correcta baja-incorrecta media (Resultado que no se puede dar)
-    cbim: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es baja por ende la eficiencia por respuestas incorrectas debería ser alta y no media',
-    //correcta media-incorrecta baja (Resultado que no se puede dar)
-    cmib: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es medio por ende la eficiencia por respuestas incorrectas tambien debería ser media y no baja',
-    //correcta alta-incorrecta alta (Resultado que no se puede dar)
-    caia: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es alta por ende la eficiencia por respuestas incorrectas debería ser baja y no alta',
-    //correcta alta-incorrecta alta (Resultado que no se puede dar)
-    caim: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es alta por ende la eficiencia por respuestas incorrectas debería ser baja y no alta',
-    //correcta media-incorrecta baja (Resultado que no se puede dar)
-    cmib: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es medio por ende la eficiencia por respuestas incorrectas tambien debería ser media y no baja',
-    //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
-    bbwb: 'Resultado Incoherente debido a que si la eficiencia relativa a los mejores resultados de los jugadores es media por ende la eficiencia relativa a los jugadores con dificultades en el nivel tambien debería ser media',
-    //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
-    //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
-    //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
-    bawm: 'Resultado Incoherente debido a que si la  la eficiencia relativa a los jugadores con dificultades es media por ende la eficiencia relativa a los mejores resultados de los jugadores tambien debería ser media',
-    //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
-    bmwa: 'Resultado Incoherente debido a que si la eficiencia relativa a los mejores resultados de los jugadores es media por ende la eficiencia relativa a los jugadores con dificultades en el nivel tambien debería ser media',
-}
+eficiencia_erroneas = {
+        //correcta baja-incorrecta baja (Resultado inconsistente)
+        cbib: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es baja por ende la eficiencia por respuestas incorrectas debería ser alta y no baja como se ve',
+        //correcta baja-incorrecta media (Resultado que no se puede dar)
+        cbim: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es baja por ende la eficiencia por respuestas incorrectas debería ser alta y no media',
+        //correcta media-incorrecta baja (Resultado que no se puede dar)
+        cmib: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es medio por ende la eficiencia por respuestas incorrectas tambien debería ser media y no baja',
+        //correcta alta-incorrecta alta (Resultado que no se puede dar)
+        caia: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es alta por ende la eficiencia por respuestas incorrectas debería ser baja y no alta',
+        //correcta alta-incorrecta alta (Resultado que no se puede dar)
+        caim: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es alta por ende la eficiencia por respuestas incorrectas debería ser baja y no alta',
+        //correcta media-incorrecta baja (Resultado que no se puede dar)
+        cmib: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es medio por ende la eficiencia por respuestas incorrectas tambien debería ser media y no baja',
+        //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
+        bbwb: 'Resultado Incoherente debido a que si la eficiencia relativa a los mejores resultados de los jugadores es media por ende la eficiencia relativa a los jugadores con dificultades en el nivel tambien debería ser media',
+        //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
+        //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
+        //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
+        bawm: 'Resultado Incoherente debido a que si la  la eficiencia relativa a los jugadores con dificultades es media por ende la eficiencia relativa a los mejores resultados de los jugadores tambien debería ser media',
+        //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
+        bmwa: 'Resultado Incoherente debido a que si la eficiencia relativa a los mejores resultados de los jugadores es media por ende la eficiencia relativa a los jugadores con dificultades en el nivel tambien debería ser media',
+    }
 
 REGLAS_EFICIENCIA = [
     // TIEMPO META
@@ -38,17 +38,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 0,
-                        conclusion: 'A pesar de que en promedio los niños tomaron muy poco tiempo para llegar a la meta,el puntaje promedio al momento de contestar tambien fue bajo, logrando de esta manera que no haya jugadores con buen puntaje. Esto se puede deber a que el niño contestó de manera rapida las preguntas y sin analizar provocando estos errores.'
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // MEDIA
                     {
                         resultado: 0,
-                        conclusion: 'A pesar de que en promedio los niños tomaron muy poco tiempo para llegar a la meta,el puntaje promedio al momento de contestar tambien fue bajo. Esto provoco que no haya jugadores con buen puntaje.Las equivocaciones se puede deber a que el niño contestó de manera rapida las preguntas, pero que tambien haya habido cierta dificultad en los niveles.'
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: 'A pesar de que en promedio los niños tomaron muy poco tiempo para llegar a la meta,el puntaje promedio al momento de contestar tambien fue bajo. Esto provoco que no haya jugadores con buen puntaje.Las equivocaciones se puede deber a que el niño contestó de manera rapida las preguntas, pero que tambien que hubo bastante dificultad en los niveles.'
+                        conclusion: eficiencia_erroneas.cbib
                     }
                 ],
                 // MEDIA
@@ -56,18 +56,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 0,
-                        conclusion: 'A pesar de que en promedio los niños tomaron muy poco tiempo para llegar a la meta,el puntaje promedio al momento de contestar tambien fue bajo. Esto provoco que haya solo haya algunos jugadores con buen puntaje. Las equivocaciones se puede deber a que el niño contestó de manera rapida y al azar, provocando estos errores.'
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo por ende la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // MEDIA
                     {
                         resultado: 0,
-                        conclusion: 'A pesar de que en promedio los niños tomaron muy poco tiempo para llegar a la meta,el puntaje promedio al momento de contestar tambien fue bajo. Esto provoco que no haya jugadores con buen puntaje.Las equivocaciones se puede deber a que el niño contestó de manera rapida las preguntas, pero que tambien haya habido cierta dificultad en los niveles.'
-                    
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo por ende la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo por ende la eficiencia por respuestas incorrectas debería ser alta'
                     }
                 ],
                 // ALTA
@@ -75,17 +74,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo por ende la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // MEDIA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo por ende la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo por ende la eficiencia por respuestas incorrectas debería ser alta'
                     }
                 ]
             ],
@@ -98,17 +97,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo por ende la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // MEDIA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo por ende la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo por ende la eficiencia por respuestas incorrectas debería ser alta'
                     }
                 ],
                 // MEDIA
@@ -116,17 +115,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo, por lo contrario, la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // MEDIA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo, por lo contrario, la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo, por lo contrario, la eficiencia por respuestas incorrectas debería ser alta'
                     }
                 ],
                 // ALTA
@@ -134,17 +133,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo, por lo contrario, la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // MEDIA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo, por lo contrario, la eficiencia por respuestas incorrectas debería ser alta'
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es baja, por lo contrario, la eficiencia por respuestas incorrectas debería ser alta'
                     }
                 ]
             ],
@@ -519,17 +518,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     },
                     // MEDIA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // ALTA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     }
                 ],
                 // MEDIA
@@ -537,17 +536,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // MEDIA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // ALTA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     }
                 ],
                 // ALTA
@@ -555,17 +554,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // MEDIA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // ALTA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     }
                 ]
             ]
@@ -586,17 +585,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // MEDIA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // ALTA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     }
                 ],
                 // MEDIA
@@ -604,17 +603,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // MEDIA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // ALTA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     }
                 ],
                 // ALTA
@@ -622,17 +621,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // MEDIA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // ALTA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     }
                 ]
             ],
@@ -1066,17 +1065,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     },
                     // MEDIA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     },
                     // ALTA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     }
                 ],
                 // MEDIA
@@ -1084,17 +1083,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     },
                     // MEDIA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     },
                     // ALTA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     }
                 ],
                 // ALTA
@@ -1102,17 +1101,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     },
                     // MEDIA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     },
                     // ALTA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     }
                 ]
             ]
@@ -1133,17 +1132,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // MEDIA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // ALTA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     }
                 ],
                 // MEDIA
@@ -1151,17 +1150,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // MEDIA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // ALTA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     }
                 ],
                 // ALTA
@@ -1169,17 +1168,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // MEDIA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     },
                     // ALTA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.cbib
+                        conclusion: eficiencia_erroneas.cbib
                     }
                 ]
             ],
@@ -1614,17 +1613,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     },
                     // MEDIA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     },
                     // ALTA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     }
                 ],
                 // MEDIA
@@ -1632,17 +1631,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     },
                     // MEDIA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     },
                     // ALTA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     }
                 ],
                 // ALTA
@@ -1650,17 +1649,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     },
                     // MEDIA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     },
                     // ALTA
                     {
                         resultado: 3,
-                        conclusion: EFICIENCIA_ERRONEA.caia
+                        conclusion: eficiencia_erroneas.caia
                     }
                 ]
             ]
@@ -1929,7 +1928,7 @@ REGLAS_SATISFACCION = [
         conclusion: ''
     },
     // ALTA
-    { 
+    {
         resultado: 0,
         conclusion: ''
     }

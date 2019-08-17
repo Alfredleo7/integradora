@@ -137,6 +137,8 @@ app.controller('interpretacionController', ['$scope', '$rootScope', 'TodoService
 								n_user_complete++;
 							}
 						}
+						//tiempo de juego = tiempo total de todos los juegos / cuantos juegos hay
+						console.log(tiempo_juego, '# de juegos: ',$scope.level.length);
 						tiempo_juego = tiempo_juego / $scope.level.length;
 						n_wrong_prom = n_wrong_prom / $scope.level.length;
 						n_right_prom = n_right_prom / $scope.level.length;
