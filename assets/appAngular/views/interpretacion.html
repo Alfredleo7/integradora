@@ -41,6 +41,8 @@
 			      <th scope="col">Nombre</th>
 			      <th scope="col">Pregunta</th>
 			      <th scope="col">Resultado</th>
+				  <th scope="col">Interpretación</th>
+				  <th scope="col">Valoración</th>
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -50,9 +52,70 @@
 			      <td>{{resultado.nombre}}</td>
 			      <td>{{resultado.proposito}}</td>
 			      <td>{{resultado.resultado}}</td>
+				  <td>{{resultado.interpretacion}}</td>
+				  <td>{{resultado.valoracion.description}}</td>
 			    </tr>
 			  </tbody>
 			</table>
 		</div>
 	</div> 
 </div>
+
+
+<div style="padding: 20px">
+	<div class="container-fluid">
+	  <div class="card" style="padding: 0 3rem">
+		<div class="tituloTabla">
+		  Valoración General
+		</div>
+		<hr>
+		<table class="table table-bordered text-center">
+		  <thead>
+			<tr>
+			  <th scope="col">#</th>
+			  <th scope="col">Métrica</th>
+			  <!-- <th scope="col">Descripción</th>  -->
+			  <th scope="col">Valoración</th>
+			  <th scope="col">Conclusiones</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+			  <th>1</th>
+			  <td>Eficiencia</td>
+			  <!-- <td class="text-left">Grado con el que pueden lograr las metas propuestas invirtiendo una cantidad apropiada de recursos en relación a la efectividad lograda.</td> -->
+			  <td>{{ get_assessment(caracteristicas.eficiencia.fuzzy.resultado) }}</td>
+			  <td>{{ caracteristicas.eficiencia.fuzzy.conclusion }}</td>
+			</tr>
+			<tr>
+			  <th>2</th>
+			  <td>Efectividad</td>
+			  <!-- <td class="text-left">Grado en el que pueden lograr las metas propuestas con precisión y completitud.</td> -->
+			  <td>{{ get_assessment(caracteristicas.efectividad.fuzzy.resultado) }}</td>
+			  <td>{{ caracteristicas.efectividad.fuzzy.conclusion }}</td>
+			</tr>
+			<tr>
+			  <th>3</th>
+			  <td>Flexibilidad</td>
+			  <!-- <td class="text-left">Grado con el que se pueden variar las condiciones por prueba.</td> -->
+			  <td>{{ get_assessment(caracteristicas.flexibilidad.fuzzy.resultado) }}</td>
+			  <td>{{ caracteristicas.flexibilidad.fuzzy.conclusion }}</td>
+			</tr>
+			<tr>
+			  <th>4</th>
+			  <td>Satisfacción</td>
+			  <!-- <td class="text-left">Grado con el que los jugadores se sienten bien al terminar una meta.</td> -->
+			  <td>{{ get_assessment(caracteristicas.satisfaccion.fuzzy.resultado) }}</td>
+			  <td>{{ caracteristicas.satisfaccion.fuzzy.conclusion }}</td>
+			</tr>
+			<tr>
+			  <th>5</th>
+			  <th>Jugabilidad</th>
+			  <th>{{ get_assessment(caracteristicas.jugabilidad.fuzzy.resultado) }}</th>
+			  <th>{{ caracteristicas.jugabilidad.fuzzy.conclusion }}</th>
+			</tr>
+		  </tbody>
+		</table>
+	  </div>
+	</div> 
+  </div>

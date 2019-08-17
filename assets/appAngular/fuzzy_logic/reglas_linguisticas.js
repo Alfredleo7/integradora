@@ -1,3 +1,26 @@
+EFICIENCIA_ERRONEA = {
+    //correcta baja-incorrecta baja (Resultado inconsistente)
+    cbib: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es baja por ende la eficiencia por respuestas incorrectas debería ser alta y no baja como se ve',
+    //correcta baja-incorrecta media (Resultado que no se puede dar)
+    cbim: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es baja por ende la eficiencia por respuestas incorrectas debería ser alta y no media',
+    //correcta media-incorrecta baja (Resultado que no se puede dar)
+    cmib: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es medio por ende la eficiencia por respuestas incorrectas tambien debería ser media y no baja',
+    //correcta alta-incorrecta alta (Resultado que no se puede dar)
+    caia: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es alta por ende la eficiencia por respuestas incorrectas debería ser baja y no alta',
+    //correcta alta-incorrecta alta (Resultado que no se puede dar)
+    caim: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es alta por ende la eficiencia por respuestas incorrectas debería ser baja y no alta',
+    //correcta media-incorrecta baja (Resultado que no se puede dar)
+    cmib: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es medio por ende la eficiencia por respuestas incorrectas tambien debería ser media y no baja',
+    //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
+    bbwb: 'Resultado Incoherente debido a que si la eficiencia relativa a los mejores resultados de los jugadores es media por ende la eficiencia relativa a los jugadores con dificultades en el nivel tambien debería ser media',
+    //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
+    //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
+    //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
+    bawm: 'Resultado Incoherente debido a que si la  la eficiencia relativa a los jugadores con dificultades es media por ende la eficiencia relativa a los mejores resultados de los jugadores tambien debería ser media',
+    //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
+    bmwa: 'Resultado Incoherente debido a que si la eficiencia relativa a los mejores resultados de los jugadores es media por ende la eficiencia relativa a los jugadores con dificultades en el nivel tambien debería ser media',
+}
+
 REGLAS_EFICIENCIA = [
     // TIEMPO META
     // BAJA
@@ -15,17 +38,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'A pesar de que en promedio los niños tomaron muy poco tiempo para llegar a la meta,el puntaje promedio al momento de contestar tambien fue bajo, logrando de esta manera que no haya jugadores con buen puntaje. Esto se puede deber a que el niño contestó de manera rapida las preguntas y sin analizar provocando estos errores.'
                     },
                     // MEDIA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'A pesar de que en promedio los niños tomaron muy poco tiempo para llegar a la meta,el puntaje promedio al momento de contestar tambien fue bajo. Esto provoco que no haya jugadores con buen puntaje.Las equivocaciones se puede deber a que el niño contestó de manera rapida las preguntas, pero que tambien haya habido cierta dificultad en los niveles.'
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'A pesar de que en promedio los niños tomaron muy poco tiempo para llegar a la meta,el puntaje promedio al momento de contestar tambien fue bajo. Esto provoco que no haya jugadores con buen puntaje.Las equivocaciones se puede deber a que el niño contestó de manera rapida las preguntas, pero que tambien que hubo bastante dificultad en los niveles.'
                     }
                 ],
                 // MEDIA
@@ -33,12 +56,13 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'A pesar de que en promedio los niños tomaron muy poco tiempo para llegar a la meta,el puntaje promedio al momento de contestar tambien fue bajo. Esto provoco que haya solo haya algunos jugadores con buen puntaje. Las equivocaciones se puede deber a que el niño contestó de manera rapida y al azar, provocando estos errores.'
                     },
                     // MEDIA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'A pesar de que en promedio los niños tomaron muy poco tiempo para llegar a la meta,el puntaje promedio al momento de contestar tambien fue bajo. Esto provoco que no haya jugadores con buen puntaje.Las equivocaciones se puede deber a que el niño contestó de manera rapida las preguntas, pero que tambien haya habido cierta dificultad en los niveles.'
+                    
                     },
                     // ALTA
                     {
@@ -494,54 +518,54 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     }
                 ]
             ]
@@ -561,54 +585,54 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     }
                 ]
             ],
@@ -1041,54 +1065,54 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     }
                 ]
             ]
@@ -1108,54 +1132,54 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.cbib
                     }
                 ]
             ],
@@ -1529,8 +1553,9 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 1,
+                        conclusion: 'En promedio se obtuvieron buenos resultados con respecto a las preguntas contestadas, sin embargo esto se lo logro en un tiempo basntante alto, lo que hace que mi eficiencia con respecto a los mejores jugadores concluyendo con esto que los niños tuvieron dificultades en los diferentes niveles de este juego'
+                    
                     },
                     // MEDIA
                     {
@@ -1588,54 +1613,54 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: EFICIENCIA_ERRONEA.caia
                     }
                 ]
             ]
@@ -1823,8 +1848,8 @@ REGLAS_EFECTIVIDAD = [
             },
             // ALTA
             {
-                resultado: 0,
-                conclusion: ''
+                resultado: 2,
+                conclusion: 'Los resultados de efectividad son altas'
             }
         ]
     ]
@@ -1838,7 +1863,7 @@ REGLAS_FLEXIBILIDAD = [
         // BAJA
         {
             resultado: 0,
-            conclusion: ''
+            conclusion: 'No existe información suficiente'
         },
         // MEDIA
         {
@@ -1856,8 +1881,8 @@ REGLAS_FLEXIBILIDAD = [
         // ACCESIBILIDAD POR TIEMPO
         // BAJA
         {
-            resultado: 0,
-            conclusion: ''
+            resultado: 1,
+            conclusion: 'A pesar que la flexibildad por tiempo es baja, se considera que la flexibilidad es media ya que pesa más la flexibilidad por metas'
         },
         // MEDIA
         {
@@ -1875,8 +1900,8 @@ REGLAS_FLEXIBILIDAD = [
         // ACCESIBILIDAD POR TIEMPO
         // BAJA
         {
-            resultado: 0,
-            conclusion: ''
+            resultado: 1,
+            conclusion: 'Con respecto a la flexibilidad, la flexibilidad total es media'
         },
         // MEDIA
         {
@@ -1896,7 +1921,7 @@ REGLAS_SATISFACCION = [
     // BAJA
     {
         resultado: 0,
-        conclusion: ''
+        conclusion: 'No existe información suficiente'
     },
     // MEDIA
     {
@@ -1910,7 +1935,7 @@ REGLAS_SATISFACCION = [
     }
 ]
 
-REGLAS_USABILIDAD = [
+REGLAS_JUGABILIDAD = [
     // EFICIENCIA
     // BAJA
     [
@@ -2232,8 +2257,8 @@ REGLAS_USABILIDAD = [
                 // SATISFACCION
                 // BAJA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 1,
+                    conclusion: 'En conclusión la usabilidad es media'
                 },
                 // MEDIA
                 {
@@ -2251,8 +2276,8 @@ REGLAS_USABILIDAD = [
                 // SATISFACCION
                 // BAJA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 1,
+                    conclusion: 'A pesar de que la efectividad es alta y la satisfacción es baja, la usabilidad total se establece en la media'
                 },
                 // MEDIA
                 {
@@ -2421,6 +2446,193 @@ REGLAS_USABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: ''
+                },
+                // MEDIA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                },
+                // ALTA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                }
+            ],
+            // MEDIA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                },
+                // MEDIA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                },
+                // ALTA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                }
+            ],
+            // ALTA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                },
+                // MEDIA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                },
+                // ALTA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                }
+            ]
+        ]
+    ],
+    // INCONSISTENTE
+    [
+        // EFECTIVIDAD
+        // BAJA
+        [
+            // FLEXIBILIDAD
+            // BAJA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                },
+                // MEDIA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                },
+                // ALTA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                }
+            ],
+            // MEDIA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                },
+                // MEDIA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                },
+                // ALTA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                }
+            ],
+            // ALTA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                },
+                // MEDIA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                },
+                // ALTA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                }
+            ]
+        ],
+        // MEDIA
+        [
+            // FLEXIBILIDAD
+            // BAJA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                },
+                // MEDIA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                },
+                // ALTA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                }
+            ],
+            // MEDIA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                },
+                // MEDIA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                },
+                // ALTA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                }
+            ],
+            // ALTA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                },
+                // MEDIA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                },
+                // ALTA
+                {
+                    resultado: 0,
+                    conclusion: ''
+                }
+            ]
+        ],
+        // ALTA
+        [
+            // FLEXIBILIDAD
+            // BAJA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'La métrica eficiencia es inconsistente, no se puede dar una valoración de jugabilidad'
                 },
                 // MEDIA
                 {
