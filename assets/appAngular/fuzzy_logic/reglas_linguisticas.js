@@ -1,24 +1,32 @@
 eficiencia_erroneas = {
-        //correcta baja-incorrecta baja (Resultado inconsistente)
-        cbib: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es baja por ende la eficiencia por respuestas incorrectas debería ser alta y no baja como se ve',
+    //correcta baja-incorrecta baja (Resultado inconsistente)
+        cbib: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es baja por ende la eficiencia por respuestas incorrectas debería ser alta y no baja',
         //correcta baja-incorrecta media (Resultado que no se puede dar)
         cbim: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es baja por ende la eficiencia por respuestas incorrectas debería ser alta y no media',
         //correcta media-incorrecta baja (Resultado que no se puede dar)
         cmib: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es medio por ende la eficiencia por respuestas incorrectas tambien debería ser media y no baja',
+        //correcta media-incorrecta baja (Resultado que no se puede dar)
+        cmia: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es medio por ende la eficiencia por respuestas incorrectas tambien debería ser media y no alta',
+      /*
         //correcta alta-incorrecta alta (Resultado que no se puede dar)
         caia: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es alta por ende la eficiencia por respuestas incorrectas debería ser baja y no alta',
         //correcta alta-incorrecta alta (Resultado que no se puede dar)
-        caim: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es alta por ende la eficiencia por respuestas incorrectas debería ser baja y no alta',
-        //correcta media-incorrecta baja (Resultado que no se puede dar)
-        cmib: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es medio por ende la eficiencia por respuestas incorrectas tambien debería ser media y no baja',
-        //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
-        bbwb: 'Resultado Incoherente debido a que si la eficiencia relativa a los mejores resultados de los jugadores es media por ende la eficiencia relativa a los jugadores con dificultades en el nivel tambien debería ser media',
-        //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
-        //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
-        //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
-        bawm: 'Resultado Incoherente debido a que si la  la eficiencia relativa a los jugadores con dificultades es media por ende la eficiencia relativa a los mejores resultados de los jugadores tambien debería ser media',
-        //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
-        bmwa: 'Resultado Incoherente debido a que si la eficiencia relativa a los mejores resultados de los jugadores es media por ende la eficiencia relativa a los jugadores con dificultades en el nivel tambien debería ser media',
+        caim: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es alta por ende la eficiencia por respuestas incorrectas debería ser baja y no media',
+        
+        //EFICIENCIA POR MEJORES RESULTADOS Y PEORES RESULTADOS (COMBINACIONES NO CONSISTENTES)
+        //eficiencia relativa a mejores resultados eficiencia con dificultad en el nivel baja (Resultado inconsistente)
+        bbwb: 'Resultado incoherente debido a que si la eficiencia relativa a los mejores resultados de los jugadores es baja por ende la eficiencia relativa a los jugadores con dificultades en el nivel debería ser alta y no baja',
+        //eficiencia relativa a mejores resultados baja-eficiencia con dificultad en el nivel media (Resultado inconsistente)
+        bbwm: 'Resultado incoherente debido a que si la eficiencia relativa a los mejores resultados de los jugadores es baja por ende la eficiencia relativa a los jugadores con dificultades en el nivel debería ser alta y no media',
+        */
+        //eficiencia relativa a mejores resultados media-eficiencia con dificultad en el nivel baja (Resultado inconsistente)
+        bmwb: 'Resultado incoherente debido a que si la eficiencia relativa a los mejores resultados de los jugadores es media por ende la eficiencia relativa a los jugadores con dificultades en el nivel tambien debería ser media y no bajo',
+        //eficiencia relativa a mejores resultados media-eficiencia con dificultad en el nivel alta (Resultado inconsistente)
+        bmwa: 'Resultado incoherente debido a que si la eficiencia relativa a los mejores resultados de los jugadores es media por ende la eficiencia relativa a los jugadores con dificultades en el nivel tambien debería ser media y no alta',
+        //eficiencia relativa a mejores resultados alta-eficiencia con dificultad en el nivel media (Resultado inconsistente)
+        bawa: 'Resultado incoherente debido a que si la eficiencia relativa a los mejores resultados de los jugadores es alta por ende la eficiencia relativa a los jugadores con dificultades en el nivel debería ser baja y no alta',
+        //eficiencia relativa a mejores resultados alta-eficiencia con dificultad en el nivel media (Resultado inconsistente)
+        bawm: 'Resultado incoherente debido a que si la eficiencia relativa a los mejores resultados de los jugadores es alta por ende la eficiencia relativa a los jugadores con dificultades en el nivel debería ser baja y no media',
     }
 
 REGLAS_EFICIENCIA = [
