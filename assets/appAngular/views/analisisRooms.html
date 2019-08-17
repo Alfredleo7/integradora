@@ -85,7 +85,7 @@
             <th scope="col">Métrica</th>
             <!-- <th scope="col">Descripción</th>  -->
             <th scope="col">Valoración</th>
-            <th scope="col">Recomendaciones</th>
+            <th scope="col">Conclusiones</th>
           </tr>
         </thead>
         <tbody>
@@ -116,6 +116,12 @@
             <!-- <td class="text-left">Grado con el que los jugadores se sienten bien al terminar una meta.</td> -->
             <td>{{ get_assessment(caracteristicas.satisfaccion.fuzzy.resultado) }}</td>
             <td>{{ caracteristicas.satisfaccion.fuzzy.conclusion }}</td>
+          </tr>
+          <tr>
+            <th>5</th>
+            <th>Jugabilidad</th>
+            <th>{{ get_assessment(caracteristicas.jugabilidad.fuzzy.resultado) }}</th>
+            <th>{{ caracteristicas.jugabilidad.fuzzy.conclusion }}</th>
           </tr>
         </tbody>
       </table>

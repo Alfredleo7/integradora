@@ -194,6 +194,11 @@ app.controller('analisisRoomsController', ['$scope', '$rootScope', 'TodoService'
                     fuzzy: 0,
                     descripcion: '',
                     sets: []
+                },
+                jugabilidad: {
+                    fuzzy: 0,
+                    descripcion: '',
+                    sets: []
                 }
             }
             
@@ -345,9 +350,18 @@ app.controller('analisisRoomsController', ['$scope', '$rootScope', 'TodoService'
             $scope.caracteristicas.flexibilidad.fuzzy = get_fuzzy_var_by_index(REGLAS_FLEXIBILIDAD, index_flexibilidad);
             let index_satisfaccion = $scope.caracteristicas.satisfaccion.sets.map(fuz_var=>fuz_var.fuzzy);
             $scope.caracteristicas.satisfaccion.fuzzy = get_fuzzy_var_by_index(REGLAS_SATISFACCION, index_satisfaccion);
+            $scope.caracteristicas.jugabilidad.fuzzy = get_fuzzy_var_by_index(
+                REGLAS_JUGABILIDAD,
+                    [
+                        $scope.caracteristicas.eficiencia.fuzzy.resultado,
+                        $scope.caracteristicas.efectividad.fuzzy.resultado,
+                        $scope.caracteristicas.flexibilidad.fuzzy.resultado,
+                        $scope.caracteristicas.satisfaccion.fuzzy.resultado
+                    ]
+                )
 
             $scope.get_assessment = (index) => {
-                return ['Bajo', 'Medio', 'Alto'][index]
+                return ['Bajo', 'Medio', 'Alto', 'Inconsistente'][index]
             }
             // $scope.caracteristicas.eficiencia.valor = get_eficiencia($scope.caracteristicas.eficiencia.crisp_input);
             // $scope.caracteristicas.efectividad.valor = get_efectividad($scope.caracteristicas.efectividad.crisp_input);
