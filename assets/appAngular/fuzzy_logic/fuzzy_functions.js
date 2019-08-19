@@ -45,47 +45,56 @@ var fuzzification_variable = (x, sets) => {
         i;
     let SET_FUZZYS = ['Baja', 'Media', 'Alta']
     sets_constructed = construct_variable(sets);
-
     for (i = sets.length - 1; i >= 0; i -= 1) {
         valori[i] = fuzzification_function(x, sets_constructed[i]);
     }
-
     let index_max = valori.indexOf(Math.max(...valori))
-
     return { fuzzy: index_max, description: SET_FUZZYS[index_max]}
 }
 
 
-let get_value_of_set = (max, min, value_porc) => {
+
+
+var get_value_of_set = (max, min, value_porc) => {
     return (max - min) * value_porc + min;
 }
 
+
 // EFICIENCIA MAX MIN
-let tiempo_meta_range = {
-    max: 1,
-    min: 0
+var tiempo_meta_range = {
+    max: 110,
+    min: 70
 }
 
 let eficiencia_respuestas_correctas = {
-    max: 1,
+    max: 11,
     min: 0
 }
 
 let eficiencia_respuestas_incorrectas = {
-    max: 1,
+    max: 100,
     min: 0
 }
 
 let relativa_mejores_resultados_jugadores = {
-    max: 1,
+    max: 100,
     min: 0
 }
 
 let relativa_jugadores_dificultades_en_nivel = {
-    max: 1,
+    max: 12,
     min: 0
 }
-
+/*
+var set_efi = (max, min) => {
+    var arreglo=[];
+    console.log('max y min ',max,min);
+    arreglo.push(get_value_of_set(max, min, 0));
+    arreglo.push(get_value_of_set(max,min,  0));
+    arreglo.push(get_value_of_set(max,min, 0.1));
+    arreglo.push(get_value_of_set(max, min, 0.5));
+    return arreglo;
+}*/
 // EFICIENCIA SETS
 let sets_eficiencia = {
     tiempo_meta: [
@@ -192,16 +201,16 @@ let sets_eficiencia = {
 
 // EFECTIVIDAD MAX MIN
 let efectividad_meta = {
-    max: 1,
+    max: 100,
     min: 0
 }
 let completitud_meta = {
-    max: 1,
+    max: 100,
     min: 0
 }
 let frecuencia_intentos_meta = {
-    max: 1,
-    min: 0
+    max: 3,
+    min: 1
 }
 
 // EFECTIVIDAD SETS
