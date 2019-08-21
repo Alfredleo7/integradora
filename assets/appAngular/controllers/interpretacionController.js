@@ -389,7 +389,7 @@ app.controller('interpretacionController', ['$scope', '$rootScope', 'TodoService
 							)
 
 						$scope.get_assessment = (index) => {
-							return ['Bajo', 'Medio', 'Alto'][index]
+							return ['Bajo', 'Medio', 'Alto','Inconsistente'][index]
 						}
 			      	});
 

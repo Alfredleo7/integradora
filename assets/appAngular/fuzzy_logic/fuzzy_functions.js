@@ -67,13 +67,13 @@ var tiempo_meta_range = {
 }
 
 let eficiencia_respuestas_correctas = {
-    max: 11,
-    min: 0
+    max: 7,
+    min: 1
 }
 
 let eficiencia_respuestas_incorrectas = {
-    max: 100,
-    min: 0
+    max: 7,
+    min: 1
 }
 
 let relativa_mejores_resultados_jugadores = {
@@ -82,7 +82,7 @@ let relativa_mejores_resultados_jugadores = {
 }
 
 let relativa_jugadores_dificultades_en_nivel = {
-    max: 12,
+    max: 100,
     min: 0
 }
 /*

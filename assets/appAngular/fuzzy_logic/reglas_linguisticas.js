@@ -104,56 +104,56 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     //posición 11 en el excel
                     {
-                        resultado: 0,
-                        conclusion: bbwb
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwb
                     },
                     // MEDIA
                     //posición 12 en el excel
                     {
-                        resultado: 0,
-                        conclusion: 'Los niños en promedio contestaron bastante rapido, esto me arrojo una eficiencia baja con respecto al tiempo de meta, que esta perfecto o es lo que se esperaría que pasara. Sin embargo, la eficiencia de respuestas correctas tambien es baja y la eficiencia de usuarios con dificultad en el nivel es alta, que lo que trata de decir que a pesar de responder de manera rapida, lo hicieron mal y eso provoco que no hayan jugadores con buen puntaje.'
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwm
                     },
                     // ALTA    
                     //posición 13 en el excel
                     {
                         resultado: 0,
-                        conclusion: 'Los niños en promedio contestaron bastante rapido, esto arrojó una eficiencia baja con respecto al tiempo de meta, que esta perfecto o es lo que se esperaría que pasara. Sin embargo, la eficiencia de respuestas correctas tambien es baja y la eficiencia de usuarios con dificultad en el nivel es baja; Esto trata de decir, que a pesar de responder de manera rapida, lo hicieron mal y se debe a la dificultad que hay en el nivel lo cual provoco que no hayan jugadores con buen puntaje. También pueder ser que el niño por hacerlo rápido no analizó las preguntas y respondió al azar.'
+                        conclusion: eficiencia_erroneas.cbim
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: 'Los niños en promedio contestaron bastante rapido, esto arrojó una eficiencia baja con respecto al tiempo de meta, que esta perfecto o es lo que se esperaría que pasara. Sin embargo, la eficiencia de respuestas correctas tambien es baja y la eficiencia de usuarios con dificultad en el nivel es baja; Esto trata de decir, que a pesar de responder de manera rapida, lo hicieron mal y que no se debe a la dificultad que hay en el nivel. De los que completaron, hay una media rescatable de jugadores que hicieron un buen trabajo. También pueder ser que el niño por hacerlo rápido no analizó las preguntas y respondió al azar.'
+                        resultado: 3,
+                        conclusion:eficiencia_erroneas.cbim
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: 'Los niños en promedio contestaron bastante rapido, esto arrojó una eficiencia baja con respecto al tiempo de meta, que esta perfecto o es lo que se esperaría que pasara. Sin embargo, la eficiencia de respuestas correctas tambien es baja y la eficiencia de usuarios con dificultad en el nivel es media;Con esto, se puede deducir, que a pesar de responder de manera rapida, lo hicieron mayormente de manera incorrecta. Ademas, que la difcultad en el nivel es proporcional a los jugadores que obtuvieron un buen resultado. Cabe recalcar que las eficiencias se esta midiendo con los juegos que niveles que fueron completados.'
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cbim
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: 'Los niños en promedio contestaron bastante rapido, esto arrojó una eficiencia baja con respecto al tiempo de meta, que esta perfecto o es lo que se esperaría que pasara. Sin embargo, la eficiencia de respuestas correctas tambien es baja y la eficiencia de usuarios con dificultad en el nivel es ALTA;Con esto, se puede deducir, que a pesar de responder de manera rapida, lo hicieron mayormente de manera incorrecta. Cabe recalcar que las eficiencias se esta midiendo con los juegos que niveles que fueron completados.'
+                        conclusion: eficiencia_erroneas.cbim
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo, por lo contrario, la eficiencia por respuestas incorrectas debería ser alta'
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cbim
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es bajo, por lo contrario, la eficiencia por respuestas incorrectas debería ser alta'
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cbim
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: 'Resultado incoherente debido a que si la eficiencia de meta por respuestas correctas es baja, por lo contrario, la eficiencia por respuestas incorrectas debería ser alta'
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cbim
                     }
                 ]
             ],
@@ -165,58 +165,59 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwb
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwm
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Los niños en promedio usaron muy poco tiempo para completar el nivel, con esto, el sistema arroja una eficiencia baja con respecto al tiempo de meta, que esta perfecto o es lo que se esperaría que pasara. Sin embargo, la eficiencia de respuestas correctas tambien es baja y la eficiencia de usuarios con dificultad en el nivel es alta, que lo que trata de decir que a pesar de responder de usar poco tiempo para responder, las respuestas no fueron las correctas.Una razón puede ser porque la mayoría de juagdores respondieron de manera rapida sin analaizar y pensar la pregunta.'
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bmwb
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 1,
+                        conclusion: 'Los niños en promedio usaron muy poco tiempo para completar el nivel, que esta perfecto o es lo que se esperaría que pasara. Sin embargo, la eficiencia de respuestas correctas tambien es baja mientras que la eficiencia de usuarios con dificultad en el nivel es media, que lo que trata de decir que a pesar de responder de usar poco tiempo para responder, las respuestas no fueron las correctas. La razón por la que se da podría ser porque la mayoría de juagdores respondieron de manera rapida sin analaizar y pensar la pregunta ó tambien porque el nivel de dificultad en las preguntas es media.'
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bmwa
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion:'Resultado inconsistente debido a que si se obtuvo una eficiencia baja en cuanto respuestas correctas, no tendría sentido que el porcentaje de jugadores que completaron el nivel sin dificultad sea alto.'
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bawm
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bawa
                     }
                 ]
             ]
         ],
+        
         // MEDIA
         [
             // EFICIENCIA DE META POR RESPUESTAS INCORRECTAS
@@ -228,54 +229,54 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     }
                 ]
             ],
@@ -287,54 +288,56 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwb
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwm
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Los niños en promedio usaron poco tiempo para completar el nivel, esto me arrojo una eficiencia baja con respecto al tiempo de meta, que esta perfecto o es lo que se esperaría que pasara. Además, la eficiencia de respuesta correcta es media y la eficiencia relativa a la dificultad en el nivel es alta, se puede concluir que  el promedio de preguntas respondidas por minutos correctamente no llego a ser en un porcentaje alto por la difucltad presentada en las preguntas'
                     }
                 ],
                 // MEDIA
                 [
+                    // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bmwb
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 1,
+                        conclusion: 'Los niños en promedio usaron poco tiempo para completar el nivel, esto me arrojo una eficiencia baja con respecto al tiempo de meta, que esta perfecto o es lo que se esperaría que pasara. Además, la eficiencia de respuesta correcta es media y la eficiencia relativa a la dificultad en el nivel tambien es media, se puede concluir que  el promedio de preguntas respondidas por minutos correctamente es proporcional a el nivel de  difucultad presentada en las preguntas.'
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bmwa
                     }
                 ],
                 // ALTA
                 [
+                    // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Los niños en promedio usaron poco tiempo para completar el nivel, esto me arrojo una eficiencia baja con respecto al tiempo de meta, que esta perfecto o es lo que se esperaría que pasara. Además, la eficiencia de respuesta correcta es media y la eficiencia relativa a la dificultad en el nivel es baja, se puede concluir que  el promedio de preguntas respondidas por minutos incorrectamente se debió a que el estudiante se apresuró por responder, y esto provocó los errores.'
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bawm
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bawa
                     }
                 ]
             ],
@@ -346,54 +349,54 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     }
                 ]
             ]
@@ -409,54 +412,54 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwb
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwm
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 2,
+                        conclusion: 'El nivel a pesar de presentar una eficiencia alta con respecto a la dificultad, en promedio los niños usaron un tiempo relativamente corto para culminar el nivel. Además de los niveles completados la eficiencia obtenidas respondiendo correctamente las preguntas es bastante alto, lo cuál deja bien parado a este nivel.'
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bmwb
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 1,
+                        conclusion: 'El nivel a pesar de presentar una eficiencia media con respecto a la dificultad, en promedio los niños usaron un tiempo relativamente corto para culminar el nivel. Además de los niveles completados la eficiencia obtenidas respondiendo correctamente las preguntas es bastante alto,dejando a jugadores con buenos puntajes.'
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bmwa
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 2,
+                        conclusion: 'La eficiencia de respuestas correctas medida en este nivel arrojan resultados altos, lo cual indica que los niños respondieron un buen número de preguntas en 1 mínuto. Esto se puede ver tambien en la eficiencia de  tiempo de meta, a pesar de que es baja, es el valor al cual todo juego debería aspirar a obtener ya que lo que esta diciendo es que en promedio los niños usaron muy poco tiempo para completar el nivel. Asi mismo, esto me permite obeter un porcentaje alto en jugadores con buenos puntajes y disminuyen los estudiantes que pudieran tener dificultad en el nivel '
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bawm
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bawa
                     }
                 ]
             ],
@@ -468,54 +471,54 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     }
                 ]
             ],
@@ -533,12 +536,12 @@ REGLAS_EFICIENCIA = [
                     // MEDIA
                     {
                         resultado: 3,
-                        conclusion: eficiencia_erroneas.cbib
+                        conclusion: eficiencia_erroneas.caia
                     },
                     // ALTA
                     {
                         resultado: 3,
-                        conclusion: eficiencia_erroneas.cbib
+                        conclusion: eficiencia_erroneas.caia
                     }
                 ],
                 // MEDIA
@@ -546,17 +549,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 3,
-                        conclusion: eficiencia_erroneas.cbib
+                        conclusion: eficiencia_erroneas.caia
                     },
                     // MEDIA
                     {
                         resultado: 3,
-                        conclusion: eficiencia_erroneas.cbib
+                        conclusion: eficiencia_erroneas.caia
                     },
                     // ALTA
                     {
                         resultado: 3,
-                        conclusion: eficiencia_erroneas.cbib
+                        conclusion: eficiencia_erroneas.caia
                     }
                 ],
                 // ALTA
@@ -564,17 +567,17 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 3,
-                        conclusion: eficiencia_erroneas.cbib
+                        conclusion: eficiencia_erroneas.caia
                     },
                     // MEDIA
                     {
                         resultado: 3,
-                        conclusion: eficiencia_erroneas.cbib
+                        conclusion: eficiencia_erroneas.caia
                     },
                     // ALTA
                     {
                         resultado: 3,
-                        conclusion: eficiencia_erroneas.cbib
+                        conclusion: eficiencia_erroneas.caia
                     }
                 ]
             ]
@@ -652,55 +655,58 @@ REGLAS_EFICIENCIA = [
                 [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
+                    //posición 11 en el excel
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwb
                     },
                     // MEDIA
+                    //posición 12 en el excel
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwm
                     },
-                    // ALTA
+                    // ALTA    
+                    //posición 13 en el excel
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: eficiencia_erroneas.cbim
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion:eficiencia_erroneas.cbim
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cbim
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: eficiencia_erroneas.cbim
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cbim
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cbim
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cbim
                     }
                 ]
             ],
@@ -712,58 +718,59 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwb
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwm
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Los niños en promedio usaron muy poco tiempo para completar el nivel, con esto, el sistema arroja una eficiencia baja con respecto al tiempo de meta, que esta perfecto o es lo que se esperaría que pasara. Sin embargo, la eficiencia de respuestas correctas tambien es baja y la eficiencia de usuarios con dificultad en el nivel es alta, que lo que trata de decir que a pesar de responder de usar poco tiempo para responder, las respuestas no fueron las correctas.Una razón puede ser porque la mayoría de juagdores respondieron de manera rapida sin analaizar y pensar la pregunta.'
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bmwb
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 1,
+                        conclusion: 'Los niños en promedio usaron muy poco tiempo para completar el nivel, que esta perfecto o es lo que se esperaría que pasara. Sin embargo, la eficiencia de respuestas correctas tambien es baja mientras que la eficiencia de usuarios con dificultad en el nivel es media, que lo que trata de decir que a pesar de responder de usar poco tiempo para responder, las respuestas no fueron las correctas. La razón por la que se da podría ser porque la mayoría de juagdores respondieron de manera rapida sin analaizar y pensar la pregunta ó tambien porque el nivel de dificultad en las preguntas es media.'
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bmwa
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion:'Resultado inconsistente debido a que si se obtuvo una eficiencia baja en cuanto respuestas correctas, no tendría sentido que el porcentaje de jugadores que completaron el nivel sin dificultad sea alto.'
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bawm
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bawa
                     }
                 ]
             ]
         ],
+        
         // MEDIA
         [
             // EFICIENCIA DE META POR RESPUESTAS INCORRECTAS
@@ -775,54 +782,54 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     }
                 ]
             ],
@@ -834,54 +841,56 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwb
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwm
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Los niños en promedio usaron poco tiempo para completar el nivel, esto me arrojo una eficiencia baja con respecto al tiempo de meta, que esta perfecto o es lo que se esperaría que pasara. Además, la eficiencia de respuesta correcta es media y la eficiencia relativa a la dificultad en el nivel es alta, se puede concluir que  el promedio de preguntas respondidas por minutos correctamente no llego a ser en un porcentaje alto por la difucltad presentada en las preguntas'
                     }
                 ],
                 // MEDIA
                 [
+                    // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bmwb
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 1,
+                        conclusion: 'Los niños en promedio usaron poco tiempo para completar el nivel, esto me arrojo una eficiencia baja con respecto al tiempo de meta, que esta perfecto o es lo que se esperaría que pasara. Además, la eficiencia de respuesta correcta es media y la eficiencia relativa a la dificultad en el nivel tambien es media, se puede concluir que  el promedio de preguntas respondidas por minutos correctamente es proporcional a el nivel de  difucultad presentada en las preguntas.'
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bmwa
                     }
                 ],
                 // ALTA
                 [
+                    // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Los niños en promedio usaron poco tiempo para completar el nivel, esto me arrojo una eficiencia baja con respecto al tiempo de meta, que esta perfecto o es lo que se esperaría que pasara. Además, la eficiencia de respuesta correcta es media y la eficiencia relativa a la dificultad en el nivel es baja, se puede concluir que  el promedio de preguntas respondidas por minutos incorrectamente se debió a que el estudiante se apresuró por responder, y esto provocó los errores.'
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bawm
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bawa
                     }
                 ]
             ],
@@ -893,54 +902,54 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     }
                 ]
             ]
@@ -956,54 +965,54 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwb
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwm
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 2,
+                        conclusion: 'El nivel a pesar de presentar una eficiencia alta con respecto a la dificultad, en promedio los niños usaron un tiempo relativamente corto para culminar el nivel. Además de los niveles completados la eficiencia obtenidas respondiendo correctamente las preguntas es bastante alto, lo cuál deja bien parado a este nivel.'
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bmwb
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 1,
+                        conclusion: 'El nivel a pesar de presentar una eficiencia media con respecto a la dificultad, en promedio los niños usaron un tiempo relativamente corto para culminar el nivel. Además de los niveles completados la eficiencia obtenidas respondiendo correctamente las preguntas es bastante alto,dejando a jugadores con buenos puntajes.'
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bmwa
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 2,
+                        conclusion: 'La eficiencia de respuestas correctas medida en este nivel arrojan resultados altos, lo cual indica que los niños respondieron un buen número de preguntas en 1 mínuto. Esto se puede ver tambien en la eficiencia de  tiempo de meta, a pesar de que es baja, es el valor al cual todo juego debería aspirar a obtener ya que lo que esta diciendo es que en promedio los niños usaron muy poco tiempo para completar el nivel. Asi mismo, esto me permite obeter un porcentaje alto en jugadores con buenos puntajes y disminuyen los estudiantes que pudieran tener dificultad en el nivel '
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bawm
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bawa
                     }
                 ]
             ],
@@ -1015,54 +1024,54 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     }
                 ]
             ],
@@ -1127,7 +1136,7 @@ REGLAS_EFICIENCIA = [
             ]
         ]
     ],
-    // ALTA
+    //ALTA
     [
         // EFICIENCIA DE META POR RESPUESTAS CORRECTAS
         // BAJA
@@ -1199,55 +1208,58 @@ REGLAS_EFICIENCIA = [
                 [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
+                    //posición 11 en el excel
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwb
                     },
                     // MEDIA
+                    //posición 12 en el excel
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwm
                     },
-                    // ALTA
+                    // ALTA    
+                    //posición 13 en el excel
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: eficiencia_erroneas.cbim
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion:eficiencia_erroneas.cbim
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cbim
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: eficiencia_erroneas.cbim
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cbim
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cbim
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cbim
                     }
                 ]
             ],
@@ -1259,58 +1271,59 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwb
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwm
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Los niños en promedio usaron tiempos prolongados para completar el nivel, con esto, el sistema arroja una eficiencia alta con respecto al tiempo de meta, que no es preferible que pase. Por otro lado, la eficiencia de respuestas correctas es baja y la eficiencia de usuarios con dificultad en el nivel es alta, que al final lo que trata de decir que a pesar de usar mucho tiempo para responder, las respuestas no fueron las correctas.La razón puede ser porque el nivel de dificultad de las preguntas eran complejas.'
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bmwb
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 1,
+                        conclusion: 'Los niños en promedio usaron tiempos prolongados para completar el nivel, con esto, el sistema arroja una eficiencia alta con respecto al tiempo de meta, que no es preferible que pase. Por otro lado, la eficiencia de respuestas correctas es media y la eficiencia de usuarios con dificultad en el nivel es alta, que al final lo que trata de decir que a pesar de usar mucho tiempo para responder, las respuestas no fueron las correctas.La razón puede ser porque el nivel de dificultad de las preguntas eran medianamente complejas..'
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bmwa
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion:'Resultado inconsistente debido a que si se obtuvo una eficiencia baja en cuanto respuestas correctas, no tendría sentido que el porcentaje de jugadores que completaron el nivel sin dificultad sea alto.'
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bawm
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bawa
                     }
                 ]
             ]
         ],
+        
         // MEDIA
         [
             // EFICIENCIA DE META POR RESPUESTAS INCORRECTAS
@@ -1322,54 +1335,54 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmib
                     }
                 ]
             ],
@@ -1381,54 +1394,56 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwb
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwm
                     },
                     // ALTA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Los niños en promedio usaron poco tiempo para completar el nivel, esto me arrojo una eficiencia baja con respecto al tiempo de meta, que esta perfecto o es lo que se esperaría que pasara. Además, la eficiencia de respuesta correcta es media y la eficiencia relativa a la dificultad en el nivel es alta, se puede concluir que  el promedio de preguntas respondidas por minutos correctamente no llego a ser en un porcentaje alto por la difucltad presentada en las preguntas'
                     }
                 ],
                 // MEDIA
                 [
+                    // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bmwb
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 1,
+                        conclusion: 'Los niños en promedio usaron poco tiempo para completar el nivel, esto me arrojo una eficiencia baja con respecto al tiempo de meta, que esta perfecto o es lo que se esperaría que pasara. Además, la eficiencia de respuesta correcta es media y la eficiencia relativa a la dificultad en el nivel tambien es media, se puede concluir que  el promedio de preguntas respondidas por minutos correctamente es proporcional a el nivel de  difucultad presentada en las preguntas.'
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bmwa
                     }
                 ],
                 // ALTA
                 [
+                    // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
                         resultado: 0,
-                        conclusion: ''
+                        conclusion: 'Los niños en promedio usaron poco tiempo para completar el nivel, esto me arrojo una eficiencia baja con respecto al tiempo de meta, que esta perfecto o es lo que se esperaría que pasara. Además, la eficiencia de respuesta correcta es media y la eficiencia relativa a la dificultad en el nivel es baja, se puede concluir que  el promedio de preguntas respondidas por minutos incorrectamente se debió a que el estudiante se apresuró por responder, y esto provocó los errores.'
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bawm
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bawa
                     }
                 ]
             ],
@@ -1440,54 +1455,54 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.cmia
                     }
                 ]
             ]
@@ -1503,54 +1518,54 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwb
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bbwm
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 1,
+                        conclusion: 'El nivel presenta una eficiencia alta con respecto a la dificultad y en promedio los niños usaron un tiempo prolongado para culminar el nivel. Además tomando  los niveles completados la eficiencia obtenida con respecto a responder correctamente varias oreguntas por minutos es bastante alto, lo cuál compensa un poco el tiempo usado.'
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bmwb
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 1,
+                        conclusion: 'El nivel presenta una eficiencia media con respecto a la dificultad y en promedio los niños usaron un tiempo prolongado para culminar el nivel. Además de los niveles completados la eficiencia obtenidas respondiendo varias preguntas correctamente por minuto es bastante alto, lo cual compensa el tiempo empleado.'
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bmwa
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 2,
+                        conclusion: 'La eficiencia de respuestas correctas medida en este nivel arrojan resultados altos, lo cual indica que los niños respondieron un buen número de preguntas en 1 mínuto. Esto se puede ver tambien en la eficiencia de  tiempo de meta, a pesar de que es baja, es el valor al cual todo juego debería aspirar a obtener ya que lo que esta diciendo es que en promedio los niños usaron muy poco tiempo para completar el nivel. Asi mismo, esto me permite obeter un porcentaje alto en jugadores con buenos puntajes y disminuyen los estudiantes que pudieran tener dificultad en el nivel '
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bawm
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.bawa
                     }
                 ]
             ],
@@ -1562,55 +1577,54 @@ REGLAS_EFICIENCIA = [
                     // EFICIENCIA RELATIVA A LOS JUGADORES CON DIFICULTADES EN EL NIVEL
                     // BAJA
                     {
-                        resultado: 1,
-                        conclusion: 'En promedio se obtuvieron buenos resultados con respecto a las preguntas contestadas, sin embargo esto se lo logro en un tiempo basntante alto, lo que hace que mi eficiencia con respecto a los mejores jugadores concluyendo con esto que los niños tuvieron dificultades en los diferentes niveles de este juego'
-                    
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     }
                 ],
                 // MEDIA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     }
                 ],
                 // ALTA
                 [
                     // BAJA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     },
                     // MEDIA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     },
                     // ALTA
                     {
-                        resultado: 0,
-                        conclusion: ''
+                        resultado: 3,
+                        conclusion: eficiencia_erroneas.caim
                     }
                 ]
             ],
@@ -1688,12 +1702,12 @@ REGLAS_EFECTIVIDAD = [
             // BAJA
             {
                 resultado: 0,
-                conclusion: 'El numero de niños que completaron el nivel fue muy bajo, lo que quiere decir que hubo muchos abandonos. De los que completaron el nivel, al menos un intento tambien fueron pocos los que contestaron correctamente.'
+                conclusion: 'El numero de niños que completaron el nivel fue muy bajo, lo que quiere decir que hubo muchos abandonos. De los que completaron el nivel, al menos un intento tambien fueron muy pocos los que contestaron correctamente.'
             },
             // MEDIA
             {
                 resultado: 0,
-                conclusion: 'El numero de niños que completaron el nivel fue muy bajo, lo que quiere decir que hubo muchos abandonos. De los que completaron el nivel, realizando mas de un intento, respondieron incorrectamente.'
+                conclusion: 'El numero de niños que completaron el nivel fue muy bajo, lo que quiere decir que hubo muchos abandonos. De los que completaron el nivel, realizando mas de un intento, muchos respondieron incorrectamente.'
             },
             // ALTA
             {
@@ -1707,17 +1721,17 @@ REGLAS_EFECTIVIDAD = [
             // BAJA
             {
                 resultado: 0,
-                conclusion: 'El numero de niños que completaron el nivel fue muy bajo, lo que quiere decir que hubo muchos abandonos. De los que completaron el nivel, realizando al menos un intento, respondieron medianamente correcto.'
+                conclusion: 'El numero de niños que completaron ronda mas o menos la mitad del total. De los que completaron el nivel, realizando al menos un intento, respondieron mayormente inncorrecto.'
             },
             // MEDIA
             {
                 resultado: 0,
-                conclusion: 'El numero de niños que completaron el nivel fue bajo, lo que quiere decir que hubo muchos abandonos. De los que completaron el nivel, realizando mas de un intento, respondieron medianamente correcto.'
+                conclusion: 'El numero de niños que completaron ronda mas o menos la mitad del total. De los que completaron el nivel, realizando mas de un intento, respondieron mayormente inncorrecto.'
             },
             // ALTA
             {
                 resultado: 0,
-                conclusion: 'El numero de niños que completaron el nivel fue muy bajo, lo que quiere decir que hubo muchos abandonos. De los que completaron el nivel, realizando muchos intentos, respondieron medianamente correcto. Esto da indicios de que el nivel presenta cierta dificultad en las preguntas.'
+                conclusion: 'El numero de niños que completaron ronda mas o menos la mitad del total. De los que completaron el nivel, realizando muchos intentos, respondieron mayormente inncorrecto.'
             }
         ],
         // ALTA
@@ -1787,21 +1801,20 @@ REGLAS_EFECTIVIDAD = [
             // BAJA
             {
                 resultado: 2,
-                conclusion: 'El número de niños que completaron el nivel fue casi, o mas de la mitad del total, lo que quiere decir que hubo el mismo porcentaje de abandonos. De los que completaron el nivel, realizando por lo mucho 1 intento, respondieron mayormente correcta las preguntas. '
+                conclusion: 'El número de niños que completaron el nivel fue casi total o total. Estos, realizando por lo mucho 1 intento, respondieron medianamente correcta las preguntas. '
             },
             // MEDIA
             {
                 resultado: 1,
-                conclusion: 'El número de niños que completaron el nivel fue casi, o mas de la mitad del total, lo que quiere decir que hubo el mismo porcentaje de abandonos. De los que completaron el nivel, realizando mas de 1 intento, respondieron mayormente correcta las preguntas. '
+                conclusion: 'El número de niños que completaron el nivel fue casi total o total. De estos, realizando mas de 1 intento, respondieron medianamente correcta las preguntas. '
             },
             // ALTA
             {
                 resultado: 1,
-                conclusion: 'El número de niños que completaron el nivel fue casi, o mas de la mitad del total, lo que quiere decir que hubo el mismo porcentaje de abandonos. De los que completaron el nivel, realizando muchos intento, respondieron correctamente las preguntas. '
+                conclusion: 'El número de niños que completaron el nivel fue casi, o  total. De estos, realizando muchos intento, respondieron medianamente correcta las preguntas. '
             }
         ]
     ],
-    //EFECTIVIDAD EN LA MENTA 
     //ALTA
     [
         // COMPLETITUD DE LA META
@@ -1811,17 +1824,17 @@ REGLAS_EFECTIVIDAD = [
             // BAJA
             {
                 resultado: 0,
-                conclusion: 'El número de niños que completaron el nivel fue casi total. Sin embargo, estos que completaron el nivel realizando por lo menos un intento, respondieron en un gran porcentaje Incorrectamente las preguntas. '
+                conclusion: 'El número de niños que completaron el nivel fue muy poco con respecto al total. De estos que completaron el nivel, realizando por lo menos un intento, respondieron en un gran porcentaje correctamente las preguntas. '
             },
             // MEDIA
             {
                 resultado: 0,
-                conclusion: 'El número de niños que completaron el nivel fue casi total. Sin embargo, estos que completaron el nivel realizando  mas de un intento, respondieron en  gran porcentaje incorrectamente las preguntas. '
+                conclusion: 'El número de niños que completaron el nivel fue muy poco con respecto al total. Sin embargo, estos que completaron el nivel, realizando  mas de un intento, respondieron en  gran porcentaje correctamente las preguntas. '
             },
             // ALTA
             {
                 resultado: 0,
-                conclusion: 'El número de niños que completaron el nivel fue casi total. Sin embargo, estos que completaron el nivel realizando muchos intento, respondieron en un gran porcentaje incorrectamente las preguntas. '
+                conclusion: 'El número de niños que completaron el nivel fue muy poco con respecto al total. Sin embargo, estos que completaron el nivel, realizando muchos intento, respondieron en un gran porcentaje correctamente las preguntas. '
             }
         ],
         // MEDIA
@@ -1830,17 +1843,17 @@ REGLAS_EFECTIVIDAD = [
             // BAJA
             {
                 resultado: 2,
-                conclusion: 'El número de niños que completaron el nivel fue casi total. De estos que completaron el nivel, realizando por lo mucho un intento, respondieron en un  porcentaje medio, correctamente las preguntas. '
+                conclusion: 'El número de niños que completaron el nivel ronda mas o menos por la mitad del total. De estos que completaron el nivel, realizando por lo mucho un intento, respondieron en un  porcentaje medio, correctamente las preguntas. '
             },
             // MEDIA
             {
                 resultado: 1,
-                conclusion: 'El número de niños que completaron el nivel fue casi total. De estos que completaron el nivel, realizando mas de un INTENTO, respondieron en un  porcentaje medio, correctamente las preguntas. '
+                conclusion: 'El número de niños que completaron el nivel ronda mas o menos por la mitad del total. De estos que completaron el nivel, realizando mas de un INTENTO, respondieron en un  porcentaje medio, correctamente las preguntas. '
             },
             // ALTA
             {
                 resultado: 1,
-                conclusion: 'El número de niños que completaron el nivel fue casi total. De estos que completaron el nivel, realizando muchos intento, respondieron en un  porcentaje medio, correctamente las preguntas. '
+                conclusion: 'El número de niños que completaron el nivel ronda mas o menos por la mitad del total. De estos que completaron el nivel, realizando muchos intento, respondieron en un  porcentaje medio, correctamente las preguntas. '
             }
         ],
         // ALTA
@@ -1848,7 +1861,7 @@ REGLAS_EFECTIVIDAD = [
             // FRECUENCIA DE INTENTOS PARA LLEGAR A LA META
             // BAJA
             {
-                resultado: 1,
+                resultado: 2,
                 conclusion: 'El número de niños que completaron el nivel fue casi total. De estos que completaron el nivel, realizando por lo mucho un intento, respondieron en un  porcentaje casi total, correctamente las preguntas. '
             },
             // MEDIA
@@ -1970,6 +1983,11 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ],
             // MEDIA
@@ -2371,7 +2389,7 @@ REGLAS_JUGABILIDAD = [
                 // BAJA
                 {
                     resultado: 0,
-                    conclusion: ''
+                    conclusion: 'El '
                 },
                 // MEDIA
                 {
@@ -2557,8 +2575,8 @@ REGLAS_JUGABILIDAD = [
                 // SATISFACCION
                 // BAJA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 },
                 // MEDIA
                 {
