@@ -43,7 +43,7 @@ var fuzzification_function = (x, set) => {
 var fuzzification_variable = (x, sets) => {
     var valori = [],
         i;
-    let SET_FUZZYS = ['Baja', 'Media', 'Alta']
+    let SET_FUZZYS = ['Baja', 'Media', 'Alta', 'Inconsistente']
     sets_constructed = construct_variable(sets);
     for (i = sets.length - 1; i >= 0; i -= 1) {
         valori[i] = fuzzification_function(x, sets_constructed[i]);
@@ -97,66 +97,72 @@ var set_efi = (max, min) => {
 }*/
 // EFICIENCIA SETS
 let sets_eficiencia = {
-    tiempo_meta: [
-        [
-            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0),
-            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0),
-            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0.1),
-            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0.5)
-        ],
-        [
-            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0.1),
-            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0.5),
-            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0.5),
-            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0.9)
-        ],
-        [
-            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0.5),
-            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 0.9),
-            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 1),
-            get_value_of_set(tiempo_meta_range.max, tiempo_meta_range.min, 1)
-        ]
-    ],
-    eficiencia_respuestas_correctas: [
-        [
-            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0),
-            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0),
-            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0.1),
-            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0.5)
-        ],
-        [
-            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0.1),
-            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0.5),
-            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0.5),
-            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0.9)
-        ],
-        [
-            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0.5),
-            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 0.9),
-            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 1),
-            get_value_of_set(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min, 1)
-        ]
-    ],
-    eficiencia_respuestas_incorrectas: [
-        [
-            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0),
-            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0),
-            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0.1),
-            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0.5)
-        ],
-        [
-            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0.1),
-            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0.5),
-            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0.5),
-            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0.9)
-        ],
-        [
-            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0.5),
-            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 0.9),
-            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 1),
-            get_value_of_set(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min, 1)
-        ]
-    ],
+    tiempo_meta: (min, max) => {
+        return [
+                    [
+                        get_value_of_set(max, min, 0),
+                        get_value_of_set(max, min, 0),
+                        get_value_of_set(max, min, 0.1),
+                        get_value_of_set(max, min, 0.5)
+                    ],
+                    [
+                        get_value_of_set(max, min, 0.1),
+                        get_value_of_set(max, min, 0.5),
+                        get_value_of_set(max, min, 0.5),
+                        get_value_of_set(max, min, 0.9)
+                    ],
+                    [
+                        get_value_of_set(max, min, 0.5),
+                        get_value_of_set(max, min, 0.9),
+                        get_value_of_set(max, min, 1),
+                        get_value_of_set(max, min, 1)
+                    ]
+                ]
+    },
+    eficiencia_respuestas_correctas: (min, max) => {
+        return [
+                    [
+                        get_value_of_set(max, min, 0),
+                        get_value_of_set(max, min, 0),
+                        get_value_of_set(max, min, 0.1),
+                        get_value_of_set(max, min, 0.5)
+                    ],
+                    [
+                        get_value_of_set(max, min, 0.1),
+                        get_value_of_set(max, min, 0.5),
+                        get_value_of_set(max, min, 0.5),
+                        get_value_of_set(max, min, 0.9)
+                    ],
+                    [
+                        get_value_of_set(max, min, 0.5),
+                        get_value_of_set(max, min, 0.9),
+                        get_value_of_set(max, min, 1),
+                        get_value_of_set(max, min, 1)
+                    ]
+                ]
+    },
+    eficiencia_respuestas_incorrectas: (min, max) => {
+        return [
+                    [
+                        get_value_of_set(max, min, 0),
+                        get_value_of_set(max, min, 0),
+                        get_value_of_set(max, min, 0.1),
+                        get_value_of_set(max, min, 0.5)
+                    ],
+                    [
+                        get_value_of_set(max, min, 0.1),
+                        get_value_of_set(max, min, 0.5),
+                        get_value_of_set(max, min, 0.5),
+                        get_value_of_set(max, min, 0.9)
+                    ],
+                    [
+                        get_value_of_set(max, min, 0.5),
+                        get_value_of_set(max, min, 0.9),
+                        get_value_of_set(max, min, 1),
+                        get_value_of_set(max, min, 1)
+                    ]
+                ]
+    },
     relativa_mejores_resultados_jugadores: [
         [
             get_value_of_set(relativa_mejores_resultados_jugadores.max, relativa_mejores_resultados_jugadores.min, 0),
@@ -255,35 +261,37 @@ let sets_efectividad = {
             get_value_of_set(completitud_meta.max, completitud_meta.min, 1)
         ]
     ],
-    frecuencia_intentos_meta: [
-        [
-            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0),
-            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0),
-            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0.1),
-            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0.5)
-        ],
-        [
-            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0.1),
-            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0.5),
-            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0.5),
-            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0.9)
-        ],
-        [
-            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0.5),
-            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 0.9),
-            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 1),
-            get_value_of_set(frecuencia_intentos_meta.max, frecuencia_intentos_meta.min, 1)
-        ]
-    ]
+    frecuencia_intentos_meta: (min, max) => {
+        return [
+                    [
+                        get_value_of_set(max, min, 0),
+                        get_value_of_set(max, min, 0),
+                        get_value_of_set(max, min, 0.1),
+                        get_value_of_set(max, min, 0.5)
+                    ],
+                    [
+                        get_value_of_set(max, min, 0.1),
+                        get_value_of_set(max, min, 0.5),
+                        get_value_of_set(max, min, 0.5),
+                        get_value_of_set(max, min, 0.9)
+                    ],
+                    [
+                        get_value_of_set(max, min, 0.5),
+                        get_value_of_set(max, min, 0.9),
+                        get_value_of_set(max, min, 1),
+                        get_value_of_set(max, min, 1)
+                    ]
+                ]
+    } 
 }
 
 // FLEXIBILIDAD MAX MIN
 let accesibilidad_por_metas = {
-    max: 1,
+    max: 100,
     min: 0
 }
 let accesibilidad_por_tiempo = {
-    max: 1,
+    max: 100,
     min: 0
 }
 
@@ -333,7 +341,7 @@ let sets_flexibilidad = {
 
 // SATISFACCION MAX MIN
 let preferencia_uso = {
-    max: 1,
+    max: 100,
     min: 0
 }
 

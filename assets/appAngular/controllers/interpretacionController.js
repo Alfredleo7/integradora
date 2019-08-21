@@ -150,15 +150,17 @@ app.controller('interpretacionController', ['$scope', '$rootScope', 'TodoService
 							if ($scope.level[i].estado == "completado") {
 
 								intentos_ok = intentos_ok + $scope.level[i].intentos;
-								intentos_efectividad.push($scope.level[i].intentos);
 								correctas_ok = correctas_ok + $scope.level[i].correctas;
 								respuestas_ok.push($scope.level[i].correctas);
 								incorrectas_ok = incorrectas_ok + $scope.level[i].incorrectas;
 								tiempo_juego_ok = tiempo_juego_ok + $scope.level[i].tiempo_juego;
 								//console.log("intentos_ok",$scope.level[i].intentos,"correctas ",$scope.level[i].correctas," incorrectas",$scope.level[i].incorrectas," tiempo de juego actual",$scope.level[i].tiempo_juego)
 								tiempo_juego_ok_list[i] = Number($scope.level[i].tiempo_juego);
-								tiempo_meta_ok.push($scope.level[i].tiempo_juego);
 								n_user_complete++;
+
+								// ingreso de valores para maximos y minimos
+								intentos_efectividad.push($scope.level[i].intentos);
+								tiempo_meta_ok.push($scope.level[i].tiempo_juego);
 							}
 						}
 						
@@ -228,33 +230,44 @@ app.controller('interpretacionController', ['$scope', '$rootScope', 'TodoService
 				        	switch($scope.metricas[i].id){
 				        		//Eficiencia
 				        		case 1:
-									//console.log('Maximo',tiempo_meta_range.max);
-									//console.log('Minimo',tiempo_meta_range.min);
-									tiempo_meta_range.max=Math.max(...tiempo_meta_ok);
-									tiempo_meta_range.min=Math.min(...tiempo_meta_ok);
 									resultado = TiempoMeta(tiempo_juego_ok).toFixed(2); 
 									$scope.resultados[i].resultado = resultado + " seg";									
 									$scope.resultados[i].resultado_valor = resultado;
-									$scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_eficiencia.tiempo_meta);
+									// SE ENVIAN DIRECTAMENTE EL VALOR MININO Y MAXIMO
+									$scope.resultados[i].valoracion = fuzzification_variable(
+										resultado,
+										sets_eficiencia.tiempo_meta(
+											Math.min(...tiempo_meta_ok),
+											Math.max(...tiempo_meta_ok)
+										)
+									);
 									//console.log($scope.resultados[i].valoracion)
 				        			break;
 				        		case 2:
-									eficiencia_respuestas_correctas.max=(correctas_ok+incorrectas_ok)/(tiempo_meta_range.min/60);
-									eficiencia_respuestas_correctas.min=0;
 									resultado = EficienciaMeta(correctas_ok, (tiempo_juego_ok/60)).toFixed(2);
 				        			$scope.resultados[i].resultado = resultado + " corr/min";
 									$scope.resultados[i].resultado_valor = resultado;
-									//console.log(eficiencia_respuestas_correctas.max, eficiencia_respuestas_correctas.min);
-									$scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_eficiencia.eficiencia_respuestas_correctas)
+									// SE ENVIAN DIRECTAMENTE EL VALOR MINIMO Y MAXIMO
+									$scope.resultados[i].valoracion = fuzzification_variable(
+										resultado,
+										sets_eficiencia.eficiencia_respuestas_correctas(
+											0,
+											(correctas_ok+incorrectas_ok)/(tiempo_meta_range.min/60)
+										)
+									)
 				        			break;
 				        		case 3:
-									eficiencia_respuestas_incorrectas.max= (correctas_ok+incorrectas_ok)/(tiempo_meta_range.min/60);
-									eficiencia_respuestas_incorrectas.min=0;
 					        		resultado = EficienciaMetaPorIncorrectas(incorrectas_ok, (tiempo_juego/60)).toFixed(2);
 					        		$scope.resultados[i].resultado = resultado + " incorr/min";
 									$scope.resultados[i].resultado_valor = resultado;
 									//console.log(eficiencia_respuestas_incorrectas.max, eficiencia_respuestas_incorrectas.min);
-									$scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_eficiencia.eficiencia_respuestas_incorrectas)
+									$scope.resultados[i].valoracion = fuzzification_variable(
+										resultado,
+										sets_eficiencia.eficiencia_respuestas_incorrectas(
+											0,
+											(correctas_ok+incorrectas_ok)/(tiempo_meta_range.min/60)
+										)
+									)
 				        			break;
 								case 4:
 									var best_time = 0, cont_best_time = 0;
@@ -309,12 +322,18 @@ app.controller('interpretacionController', ['$scope', '$rootScope', 'TodoService
 									break;
 								case 8:
 									//Maximo de las frecuencias de intentos
-									frecuencia_intentos_meta.max = Math.max(...intentos_efectividad);
-									frecuencia_intentos_meta.min = 1;
+									// frecuencia_intentos_meta.max = Math.max(...intentos_efectividad);
+									// frecuencia_intentos_meta.min = 1;
 									resultado = FrecuenciaIntentosMeta(intentos_ok, correctas_ok).toFixed(2);
 									$scope.resultados[i].resultado = resultado + " intentos";
 									$scope.resultados[i].resultado_valor = resultado;
-									$scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_efectividad.frecuencia_intentos_meta)
+									$scope.resultados[i].valoracion = fuzzification_variable(
+										resultado,
+										sets_efectividad.frecuencia_intentos_meta(
+											Math.min(...intentos_efectividad),
+											Math.max(...intentos_efectividad)
+										)
+									)
 									break;
 								//Flexibilidad
 								case 9:
@@ -323,7 +342,7 @@ app.controller('interpretacionController', ['$scope', '$rootScope', 'TodoService
 									if (isNaN(resultado)) {
 										$scope.resultados[i].resultado = "No hay Jugadores en Escenario por Default";
 										$scope.resultados[i].resultado_valor = 0;
-										$scope.resultados[i].valoracion = fuzzification_variable(0, sets_flexibilidad.accesibilidad_por_metas);
+										$scope.resultados[i].valoracion = {fuzzy: 0, description: 'No aplica'}
 									}
 									else {
 										$scope.resultados[i].resultado = resultado;
@@ -335,7 +354,7 @@ app.controller('interpretacionController', ['$scope', '$rootScope', 'TodoService
 									resultado = AccesibilidadPorTiempo(rooms_default, rooms_rest, $scope.level, jugadores_room_default, jugadores_room_rest).toFixed(3);
 									if (isNaN(resultado)) { 
 										$scope.resultados[i].resultado = "No hay Jugadores en Escenario por Default";$scope.resultados[i].resultado_valor = 0;
-										$scope.resultados[i].valoracion = fuzzification_variable(0, sets_flexibilidad.accesibilidad_por_tiempo)
+										$scope.resultados[i].valoracion = {fuzzy: 0, description: 'No aplica'}
 									}
 									else {
 										$scope.resultados[i].resultado = resultado;

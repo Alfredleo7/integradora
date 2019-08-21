@@ -96,6 +96,10 @@ app.controller('analisisRoomsController', ['$scope', '$rootScope', 'TodoService'
         var escenario_rest = [];
         var jugadores_room_default = [], jugadores_room_rest = [];
 
+        // Maximos y mínimos
+        var intentos_efectividad=[];
+        var tiempo_meta_ok=[];
+
                 
         TodoService.getLearnUserByLevel($scope.select.levelId).then(function(response) {
             $scope.learning = response;
@@ -150,9 +154,13 @@ app.controller('analisisRoomsController', ['$scope', '$rootScope', 'TodoService'
                     correctas_ok = correctas_ok + $scope.level[i].correctas;
                     incorrectas_ok = incorrectas_ok + $scope.level[i].incorrectas;
                     tiempo_juego_ok = tiempo_juego_ok + $scope.level[i].tiempo_juego;
-
+                    
                     tiempo_juego_ok_list[i] = $scope.level[i].tiempo_juego;
                     n_user_complete++;
+                    
+                    // ingreso de valores para máximos y mínimos
+                    intentos_efectividad.push($scope.level[i].intentos);
+                    tiempo_meta_ok.push($scope.level[i].tiempo_juego);
                 }
             }
             tiempo_juego = tiempo_juego / $scope.level.length;
@@ -219,19 +227,37 @@ app.controller('analisisRoomsController', ['$scope', '$rootScope', 'TodoService'
                         resultado = TiempoMeta(tiempo_juego_ok).toFixed(2);
                         $scope.resultados[i].resultado = resultado + " seg";
                         $scope.resultados[i].resultado_valor = resultado;
-                        $scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_eficiencia.tiempo_meta)
+                        $scope.resultados[i].valoracion = fuzzification_variable(
+                            resultado,
+                            sets_eficiencia.tiempo_meta(
+                                Math.min(...tiempo_meta_ok),
+                                Math.max(...tiempo_meta_ok)
+                            )
+                        )
                         break;
                     case 2:
                         resultado = EficienciaMeta(correctas_ok, (tiempo_juego/60)).toFixed(2);
                         $scope.resultados[i].resultado = resultado + " corr/min";
                         $scope.resultados[i].resultado_valor = resultado;
-                        $scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_eficiencia.eficiencia_respuestas_correctas)
+                        $scope.resultados[i].valoracion = fuzzification_variable(
+                            resultado,
+                            sets_eficiencia.eficiencia_respuestas_correctas(
+                                0,
+                                (correctas_ok+incorrectas_ok)/(tiempo_meta_range.min/60)
+                            )
+                        )
                         break;
                     case 3:
                         resultado = EficienciaMetaPorIncorrectas(incorrectas_ok, (tiempo_juego/60)).toFixed(2);
                         $scope.resultados[i].resultado = resultado + " incorr/min";
                         $scope.resultados[i].resultado_valor = resultado;
-                        $scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_eficiencia.eficiencia_respuestas_incorrectas)
+                        $scope.resultados[i].valoracion = fuzzification_variable(
+                            resultado,
+                            sets_eficiencia.eficiencia_respuestas_incorrectas(
+                                0,
+                                (correctas_ok+incorrectas_ok)/(tiempo_meta_range.min/60)
+                            )
+                        )
                         break;
                     case 4:
                         var best_time = 0, cont_best_time = 0;
@@ -285,7 +311,13 @@ app.controller('analisisRoomsController', ['$scope', '$rootScope', 'TodoService'
                         resultado = FrecuenciaIntentosMeta(intentos_ok, correctas_ok).toFixed(2);
                         $scope.resultados[i].resultado = resultado + " intentos";
                         $scope.resultados[i].resultado_valor = resultado;
-                        $scope.resultados[i].valoracion = fuzzification_variable(resultado, sets_efectividad.frecuencia_intentos_meta)
+                        $scope.resultados[i].valoracion = fuzzification_variable(
+                            resultado,
+                            sets_efectividad.frecuencia_intentos_meta(
+                                Math.min(...intentos_efectividad),
+                                Math.max(...intentos_efectividad)
+                            )
+                        )
                         break;
                     //Flexibilidad
                     case 9:
@@ -293,7 +325,7 @@ app.controller('analisisRoomsController', ['$scope', '$rootScope', 'TodoService'
                         if (isNaN(resultado)){
                             $scope.resultados[i].resultado = "No hay Jugadores en Escenario por Default";
                             $scope.resultados[i].resultado_valor = 0;
-                            $scope.resultados[i].valoracion = fuzzification_variable(0, sets_flexibilidad.accesibilidad_por_metas)
+                            $scope.resultados[i].valoracion = {fuzzy: 0, description: 'No aplica'}
                         }
                         else{
                             $scope.resultados[i].resultado = resultado;
@@ -306,7 +338,7 @@ app.controller('analisisRoomsController', ['$scope', '$rootScope', 'TodoService'
                         if (isNaN(resultado)){
                             $scope.resultados[i].resultado = "No hay Jugadores en Escenario por Default";
                             $scope.resultados[i].resultado_valor = 0;
-                            $scope.resultados[i].valoracion = fuzzification_variable(0, sets_flexibilidad.accesibilidad_por_tiempo)
+                            $scope.resultados[i].valoracion = {fuzzy: 0, description: 'No aplica'}
                         }
                         else {
                             $scope.resultados[i].resultado = resultado;
