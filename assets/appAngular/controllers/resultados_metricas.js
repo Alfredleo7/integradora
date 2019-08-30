@@ -53,7 +53,7 @@ function EficienciaMetaPorIncorrectas(incorrectas_ok, tiempo_juego) { //Respuest
 }
 //Eficiencia relativa a los mejores resultados de jugadores (id: 4)
 function EficienciaRelativaUsuarioOK(cont_best_time, total_jugadores) { //Número de mejores jugadores vs total de jugadores
-	console.log('Eficiencia relativa a los mejores jugadpres', (cont_best_time / total_jugadores) * 100);
+	//console.log('Eficiencia relativa a los mejores jugadpres', (cont_best_time / total_jugadores) * 100);
 	return (cont_best_time / total_jugadores) * 100;
 	//return 50;
 }
@@ -142,7 +142,7 @@ function AccesibilidadPorMetas(rooms_default, rooms_rest, level, jugadores_room_
 			}
 		}
 	}
-		console.log(nivel_usuario_rest);
+		//console.log(nivel_usuario_rest);
 	for (var i = 0; i < nivel_usuario_rest.length; i++) {
 		//De los usuarios que si vieron las historias, cuantos de ellos completaron el nivel
 		if (nivel_usuario_rest[i].estado == "completado") {
@@ -228,6 +228,7 @@ function AccesibilidadPorTiempo(rooms_default, rooms_rest, level, jugadores_room
 //SATISFACCION
 
 //Preferencias de uso con respecto del nivel vs el resto de niveles (id: 11)
+
 function PreferenciaUso(n_completos, nivel, niveles, level_users) { //Escala de completitud de meta del nivel vs escala completitud de meta del resto de niveles
 	//Se usa la relacion de usuarios que completaron el nivel vs el numero total de usuarios, denota que usuarios terminaron el nivel vs los que abandonaron
 	var completitud_nivel = 0;
@@ -235,9 +236,11 @@ function PreferenciaUso(n_completos, nivel, niveles, level_users) { //Escala de 
 	var n_nivel_OK = 0, n_nivel = 0;
 	var diferencia = 0;
 	var eficiencia_nivel = 0;
-
+	var preferencias_mayor=0;
+	var preferencias_menor=0;
+	var preferencia=0;
 	completitud_nivel = CompletitudMeta(n_completos, nivel.length) / 100;
-
+	console.log('Completitud de la meta de este nivel',completitud_nivel);
 
 	for (var i = 0; i < niveles.length; i++) {
 		for (var j = 0; j < level_users.length; j++) {
@@ -247,14 +250,24 @@ function PreferenciaUso(n_completos, nivel, niveles, level_users) { //Escala de 
 			}
 		}
 		//promedio de un nivel
+		//console.log(n_nivel_OK, n_nivel)
+		console.log('Completitd de meta por nivel',i,"",CompletitudMeta(n_nivel_OK,n_nivel)/100);
 		diferencia = completitud_nivel - CompletitudMeta(n_nivel_OK, n_nivel) / 100;
-		if (diferencia<0) diferencia*(-1);
-		eficiencia_nivel = eficiencia_nivel + diferencia;
+		console.log('diferencia: ',diferencia);
+		if (diferencia<0) preferencias_mayor++;
+		else preferencias_menor++;
+
+		 //diferencia=diferencia * (-1);
+
+		//console.log(diferencia)
+		//eficiencia_nivel = eficiencia_nivel + diferencia;
+
 	}
-
-	eficiencia_nivel = eficiencia_nivel / (niveles.length - 1);
-
-	return eficiencia_nivel * 100;
+		eficiencia_nivel = (preferencias_menor/niveles.length);
+		eficiencia_nivel= eficiencia_nivel*100;
+	//eficiencia_nivel = (eficiencia_nivel / (niveles.length - 1))*100;
+	console.log('preferencia total: ',eficiencia_nivel, "p_m",preferencias_mayor,"p_m",preferencias_menor)
+	return eficiencia_nivel;
 }
 
 

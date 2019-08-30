@@ -449,7 +449,7 @@ REGLAS_EFICIENCIA = [
                     // BAJA
                     {
                         resultado: 2,
-                        conclusion: 'La eficiencia de respuestas correctas medida en este nivel arrojan resultados altos, lo cual indica que los niños respondieron un buen número de preguntas en 1 mínuto. Esto se puede ver tambien en la eficiencia de  tiempo de meta, a pesar de que es baja, es el valor al cual todo juego debería aspirar a obtener ya que lo que esta diciendo es que en promedio los niños usaron muy poco tiempo para completar el nivel. Asi mismo, esto me permite obeter un porcentaje alto en jugadores con buenos puntajes y disminuyen los estudiantes que pudieran tener dificultad en el nivel '
+                        conclusion: 'La eficiencia de respuestas correctas medida en este nivel arrojan resultados altos, lo cual indica que los niños respondieron un buen número de preguntas por mínuto. Esto se puede ver tambien en la eficiencia de  tiempo de meta, a pesar de que es baja, es el valor al cual todo juego debería aspirar a obtener ya que lo que esta diciendo es que en promedio los niños usaron muy poco tiempo para completar el nivel. Asi mismo, esto me permite obeter un porcentaje alto en jugadores con buenos puntajes y disminuyen los estudiantes que pudieran tener dificultad en el nivel '
                     },
                     // MEDIA
                     {
@@ -866,7 +866,7 @@ REGLAS_EFICIENCIA = [
                     // MEDIA
                     {
                         resultado: 1,
-                        conclusion: 'Los niños en promedio usaron poco tiempo para completar el nivel, esto me arrojo una eficiencia baja con respecto al tiempo de meta, que esta perfecto o es lo que se esperaría que pasara. Además, la eficiencia de respuesta correcta es media y la eficiencia relativa a la dificultad en el nivel tambien es media, se puede concluir que  el promedio de preguntas respondidas por minutos correctamente es proporcional a el nivel de  difucultad presentada en las preguntas.'
+                        conclusion: 'Los niños en promedio usaron un tiempo que no esta ni muy alto ni muy bajo para completar el nivel. Además, la eficiencia de respuesta correcta es media y la eficiencia relativa a la dificultad en el nivel tambien es media; Bajo estas características se puede concluir que  el promedio de preguntas respondidas por minutos correctamente es proporcional a el nivel de  difucultad presentada en las preguntas y por tal razón solo una media tuvieron buenos resultados y la otra media dificultad para terminarlo'
                     },
                     // ALTA
                     {
@@ -1824,7 +1824,7 @@ REGLAS_EFECTIVIDAD = [
             // BAJA
             {
                 resultado: 0,
-                conclusion: 'El número de niños que completaron el nivel fue muy poco con respecto al total. De estos que completaron el nivel, realizando por lo menos un intento, respondieron en un gran porcentaje correctamente las preguntas. '
+                conclusion: 'El número de niños que completaron el nivel es muy poco con respecto al total. De los que completaron el nivel, realizando muy pocos intentos, respondieron en un gran porcentaje correctamente las preguntas. '
             },
             // MEDIA
             {
@@ -1885,8 +1885,8 @@ REGLAS_FLEXIBILIDAD = [
         // ACCESIBILIDAD POR TIEMPO
         // BAJA
         {
-            resultado: 0,
-            conclusion: 'Usando una historia previa, el niño obtiene una eficiencia de meta baja en los niveles completados, lo que indica que el porcentaje de respuestas correctas  es bajo con respecto al total de preguntas en el nivel. Ademas de eso, se obtiene un rendimiento bajo en eficiencia de meta, que en otras palabras es cuantas preguntas respondes por minuto.'
+            resultado: 1,
+            conclusion: 'Usando el escenario actual, se puede constatar que que los niños en promedio contestan menos preguntas por minutos que si es estuvieran en los otros escenarios, a pesar de que usaron menos tiempos en total que en los demas.'
         },
         // MEDIA
         {
@@ -1972,19 +1972,19 @@ REGLAS_JUGABILIDAD = [
                 // BAJA
                 {
                     resultado: 0,
-                    conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la métrica de jugabilidad'
+                    conclusion: 'Bajo todas las reglas anteriores se determinó que este nivel, no cumple con la métrica de jugabilidad'
                 },
                 // MEDIA
                 {
                     resultado: 0,
-                    conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                    conclusion: 'Bajo todas las reglas anteriores se determinó que esteste nivel, no cumple con la metrica de jugabilidad'
                 },
                 // ALTA
                 {
                     resultado: 0,
-                    conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                    conclusion: 'Bajo todas las reglas anteriores se determinó que esteste nivel, no cumple con la metrica de jugabilidad'
                 },
-                // ALTA
+                // Inconsistente
                 {
                     resultado: 3,
                     conclusion: 'No se puede dar un valoración si hay inconsistencias'
@@ -2164,7 +2164,7 @@ REGLAS_JUGABILIDAD = [
                 // BAJA
                 {
                     resultado: 0,
-                    conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                    conclusion: 'Bajo todas las reglas anteriores se determinó que este nivel, no cumple con la metrica de jugabilidad'
                 },
                 // MEDIA
                 {
@@ -2520,8 +2520,8 @@ REGLAS_JUGABILIDAD = [
                 },
                 // ALTA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 2,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple con las metrica de Juagabilidad'
                 }
             ]
         ]
@@ -2537,18 +2537,23 @@ REGLAS_JUGABILIDAD = [
                 // SATISFACCION
                 // BAJA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 },
                 // MEDIA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 },
                 // ALTA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                },
+                // INCOSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 }
             ],
             // MEDIA
@@ -2556,18 +2561,23 @@ REGLAS_JUGABILIDAD = [
                 // SATISFACCION
                 // BAJA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 },
                 // MEDIA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 },
                 // ALTA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                },
+                // INCOSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 }
             ],
             // ALTA
@@ -2580,13 +2590,18 @@ REGLAS_JUGABILIDAD = [
                 },
                 // MEDIA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 },
                 // ALTA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                },
+                // INCOSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 }
             ]
         ],
@@ -2598,18 +2613,23 @@ REGLAS_JUGABILIDAD = [
                 // SATISFACCION
                 // BAJA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 },
                 // MEDIA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 },
                 // ALTA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                },
+                // INCOSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 }
             ],
             // MEDIA
@@ -2617,18 +2637,23 @@ REGLAS_JUGABILIDAD = [
                 // SATISFACCION
                 // BAJA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 },
                 // MEDIA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 },
                 // ALTA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                },
+                // INCOSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 }
             ],
             // ALTA
@@ -2636,18 +2661,23 @@ REGLAS_JUGABILIDAD = [
                 // SATISFACCION
                 // BAJA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 },
                 // MEDIA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 },
                 // ALTA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                },
+                // INCOSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 }
             ]
         ],
@@ -2660,17 +2690,22 @@ REGLAS_JUGABILIDAD = [
                 // BAJA
                 {
                     resultado: 3,
-                    conclusion: 'La métrica eficiencia es inconsistente, no se puede dar una valoración de jugabilidad'
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 },
                 // MEDIA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 },
                 // ALTA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                },
+                // INCOSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 }
             ],
             // MEDIA
@@ -2678,18 +2713,23 @@ REGLAS_JUGABILIDAD = [
                 // SATISFACCION
                 // BAJA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 },
                 // MEDIA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 },
                 // ALTA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                },
+                // INCOSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 }
             ],
             // ALTA
@@ -2697,18 +2737,23 @@ REGLAS_JUGABILIDAD = [
                 // SATISFACCION
                 // BAJA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 },
                 // MEDIA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 },
                 // ALTA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                },
+                // INCOSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
                 }
             ]
         ]
