@@ -232,7 +232,7 @@ app.controller('interpretacionController', ['$scope', '$rootScope', 'TodoService
 				        	switch($scope.metricas[i].id){
 				        		//Eficiencia
 				        		case 1:
-									resultado = 75//TiempoMeta(tiempo_juego_ok).toFixed(2); 
+									resultado = TiempoMeta(tiempo_juego_ok).toFixed(2); 
 									$scope.resultados[i].resultado = resultado + " seg";									
 									$scope.resultados[i].resultado_valor = resultado;
 									// SE ENVIAN DIRECTAMENTE EL VALOR MININO Y MAXIMO
@@ -248,7 +248,7 @@ app.controller('interpretacionController', ['$scope', '$rootScope', 'TodoService
 									Math.max(...tiempo_meta_ok))
 				        			break;
 				        		case 2:
-									resultado = 8//EficienciaMeta(correctas_ok, (tiempo_juego_ok/60)).toFixed(2);
+									resultado = EficienciaMeta(correctas_ok, (tiempo_juego_ok/60)).toFixed(2);
 				        			$scope.resultados[i].resultado = resultado + " correctas/minutos";
 									$scope.resultados[i].resultado_valor = resultado;
 									// SE ENVIAN DIRECTAMENTE EL VALOR MINIMO Y MAXIMO
