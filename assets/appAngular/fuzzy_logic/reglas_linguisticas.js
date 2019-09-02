@@ -2351,17 +2351,17 @@ REGLAS_JUGABILIDAD = [
                 // BAJA
                 {
                     resultado: 0,
-                    conclusion: ''
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, no cumple con la metrica de Jugabilidad'
                 },
                 // MEDIA
                 {
                     resultado: 0,
-                    conclusion: ''
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, no cumple con la metrica de Jugabilidad'
                 },
                 // ALTA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 1,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple medianamente con la metrica de Jugabilidad'
                 }
             ],
             // MEDIA
@@ -2370,17 +2370,17 @@ REGLAS_JUGABILIDAD = [
                 // BAJA
                 {
                     resultado: 0,
-                    conclusion: ''
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, no cumple con la metrica de Jugabilidad'
                 },
                 // MEDIA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 1,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple medianamente con la metrica de Jugabilidad'
                 },
                 // ALTA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 2,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple con la metrica de Jugabilidad'
                 }
             ],
             // ALTA
@@ -2388,18 +2388,18 @@ REGLAS_JUGABILIDAD = [
                 // SATISFACCION
                 // BAJA
                 {
-                    resultado: 0,
-                    conclusion: 'El '
+                    resultado: 1,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple medianamente con la metrica de Jugabilidad'
                 },
                 // MEDIA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 1,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple medianamente con la metrica de Jugabilidad'
                 },
                 // ALTA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 2,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple con la metrica de Jugabilidad'
                 }
             ]
         ],
@@ -2411,18 +2411,18 @@ REGLAS_JUGABILIDAD = [
                 // SATISFACCION
                 // BAJA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 1,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple medianamente con la metrica de Jugabilidad'
                 },
                 // MEDIA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 1,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple medianamente con la metrica de Jugabilidad'
                 },
                 // ALTA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 1,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple medianamente con la metrica de Jugabilidad'
                 }
             ],
             // MEDIA
@@ -2430,18 +2430,18 @@ REGLAS_JUGABILIDAD = [
                 // SATISFACCION
                 // BAJA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 1,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple medianamente con la metrica de Jugabilidad'
                 },
                 // MEDIA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 1,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple medianamente con la metrica de Jugabilidad'
                 },
                 // ALTA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 2,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple con la metrica de Jugabilidad'
                 }
             ],
             // ALTA
@@ -2449,18 +2449,18 @@ REGLAS_JUGABILIDAD = [
                 // SATISFACCION
                 // BAJA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 1,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple medianamente la metrica de Jugabilidad'
                 },
                 // MEDIA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 2,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple con la metrica de Jugabilidad'
                 },
                 // ALTA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 2,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple con la metrica de Jugabilidad'
                 }
             ]
         ],
@@ -2473,17 +2473,17 @@ REGLAS_JUGABILIDAD = [
                 // BAJA
                 {
                     resultado: 0,
-                    conclusion: ''
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, no cumple la metrica de Jugabilidad'
                 },
                 // MEDIA
                 {
                     resultado: 0,
-                    conclusion: ''
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, no cumple la metrica de Jugabilidad'
                 },
                 // ALTA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 1,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple medianamente la metrica de Jugabilidad'
                 }
             ],
             // MEDIA
@@ -2491,18 +2491,18 @@ REGLAS_JUGABILIDAD = [
                 // SATISFACCION
                 // BAJA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 1,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple medianamente la metrica de Jugabilidad'
                 },
                 // MEDIA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 1,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple medianamente la metrica de Jugabilidad'
                 },
                 // ALTA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 2,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple con las metrica de Jugabilidad'
                 }
             ],
             // ALTA
@@ -2510,18 +2510,18 @@ REGLAS_JUGABILIDAD = [
                 // SATISFACCION
                 // BAJA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 1,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple medianamente la metrica de Jugabilidad'
                 },
                 // MEDIA
                 {
-                    resultado: 0,
-                    conclusion: ''
+                    resultado: 2,
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple con las metrica de Jugabilidad'
                 },
                 // ALTA
                 {
                     resultado: 2,
-                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple con las metrica de Juagabilidad'
+                    conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple con las metrica de Jugabilidad'
                 }
             ]
         ]
