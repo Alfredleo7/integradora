@@ -85,16 +85,7 @@ let relativa_jugadores_dificultades_en_nivel = {
     max: 100,
     min: 0
 }
-/*
-var set_efi = (max, min) => {
-    var arreglo=[];
-    console.log('max y min ',max,min);
-    arreglo.push(get_value_of_set(max, min, 0));
-    arreglo.push(get_value_of_set(max,min,  0));
-    arreglo.push(get_value_of_set(max,min, 0.1));
-    arreglo.push(get_value_of_set(max, min, 0.5));
-    return arreglo;
-}*/
+
 // EFICIENCIA SETS
 let sets_eficiencia = {
     tiempo_meta: (min, max) => {
@@ -367,17 +358,4 @@ let sets_satisfaccion = {
             get_value_of_set(preferencia_uso.max, preferencia_uso.min, 1)
         ]
     ]
-}
-
-let get_fuzzy_var_by_index = (obj, indexs) => {
-    let fuzzy_var;
-    if(indexs.length) {
-        fuzzy_var = obj;
-        indexs.forEach(
-            index => {
-                fuzzy_var = fuzzy_var[index]
-            }
-        )
-    }
-    return fuzzy_var;
 }

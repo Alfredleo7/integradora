@@ -2,22 +2,31 @@ app.controller('reglasController', ['$scope', '$rootScope', 'TodoService', funct
     
     $scope.valoraciones = ['Baja', 'Media', 'Alta', 'Inconsistente']
 
-    $scope.reglas_eficiencia;
-    $scope.reglas_efectividad;
-    $scope.reglas_flexibilidad;
-
-    
-    // for(let x = 0; x <= 2; x++) {
-    //     for(let y = 0; y <= 2; y++) {
-    //         for(let z = 0; z <= 2; z++) {
-    //             for(let a = 0; a <= 2; a++) {
-    //                 for(let b = 0; b <= 2; b++) {
-    //                     $scope.reglas_eficiencia_indexs.push([x,y,z,a,b]);
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
+    $scope.metricas_eficiencia = [
+        'Tiempo de meta',
+        'Eficiencia de meta por respuestas correctas',
+        'Eficiencia de metas por respuestas incorrectas',
+        'Eficiencia relativa a los mejores resultados de los jugadores',
+        'Eficiencia relativa a los jugadores con dificultades en el nivel'
+    ]
+    $scope.metricas_efectividad = [
+        'Efectividad en la meta',
+        'Completitud en la meta',
+        'Frecuencia de intentos para llegar a la meta'
+    ];
+    $scope.metricas_flexibilidad = [
+        'Flexibilidad por metas',
+        'Flexibilidad por tiempo'
+    ];
+    $scope.metricas_satisfaccion = [
+        'Preferencias de uso con respecto del nivel vs el resto de niveles'
+    ];
+    $scope.metricas_jugabilidad = [
+        'Eficiencia',
+        'Efectividad',
+        'Flexibilidad',
+        'Satisfacción'
+    ]
 
     TodoService.getReglasLinguisticas(1).then(function(response) {
         $scope.reglas_eficiencia = response;

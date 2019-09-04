@@ -21,16 +21,16 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="r in reglas_eficiencia | orderBy: 'id'">
-                            <td ng-repeat="i in r.codigo track by $index" ng-class="{'border-danger text-danger': i == 0, 'border-warning text-warning': i == 1, 'border-success text-success': i == 2}">
+                            <td ng-repeat="i in r.codigo track by $index" ng-class="{'border-danger text-danger': i == 0, 'border-warning text-warning': i == 1, 'border-success text-success': i == 2}" data-toggle="tooltip" data-placement="top" title="{{ metricas_eficiencia[$index] }}">
                                 {{ valoraciones[i] }}
                             </td>
-                            <td ng-class="{'border-danger text-danger': r.valoracion == 0 , 'border-warning text-warning': r.valoracion == 1, 'border-success text-success': r.valoracion == 2, 'border-info text-info': r.valoracion == 3 }">
+                            <td ng-class="{'border-danger text-danger': r.valoracion == 0 , 'border-warning text-warning': r.valoracion == 1, 'border-success text-success': r.valoracion == 2, 'border-info text-info': r.valoracion == 3 }" data-toggle="tooltip" data-placement="top" title="Eficiencia Resultante">
                                 <div ng-if="!r.editing">{{r.valoracion_descrip}}</div>
                                 <select ng-if="r.editing" class="form-control" ng-model="r.valoracion_descrip_prev">
                                     <option ng-value="v" ng-repeat="v in valoraciones">{{v}}</option>
                                 </select>
                             </td>
-                            <td>
+                            <td data-toggle="tooltip" data-placement="top" title="Conclusión">
                                 <div ng-if="!r.editing">{{r.conclusion}}</div>
                                 <textarea ng-if="r.editing" class="form-control" ng-model="r.conclusion_prev" rows="3"></textarea>
                             </td>
@@ -64,16 +64,16 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="r in reglas_efectividad | orderBy: 'id'">
-                            <td ng-repeat="i in r.codigo track by $index" ng-class="{'border-danger text-danger': i == 0, 'border-warning text-warning': i == 1, 'border-success text-success': i == 2}">
+                            <td ng-repeat="i in r.codigo track by $index" ng-class="{'border-danger text-danger': i == 0, 'border-warning text-warning': i == 1, 'border-success text-success': i == 2}" data-toggle="tooltip" data-placement="top" title="{{ metricas_efectividad[$index] }}">
                                 {{ valoraciones[i] }}
                             </td>
-                            <td ng-class="{'border-danger text-danger': r.valoracion == 0 , 'border-warning text-warning': r.valoracion == 1, 'border-success text-success': r.valoracion == 2, 'border-info text-info': r.valoracion == 3 }">
+                            <td ng-class="{'border-danger text-danger': r.valoracion == 0 , 'border-warning text-warning': r.valoracion == 1, 'border-success text-success': r.valoracion == 2, 'border-info text-info': r.valoracion == 3 }" data-toggle="tooltip" data-placement="top" title="Efectividad Resultante">
                                 <div ng-if="!r.editing">{{r.valoracion_descrip}}</div>
                                 <select ng-if="r.editing" class="form-control" ng-model="r.valoracion_descrip_prev">
                                     <option ng-value="v" ng-repeat="v in valoraciones">{{v}}</option>
                                 </select>
                             </td>
-                            <td>
+                            <td data-toggle="tooltip" data-placement="top" title="Conclusión">
                                 <div ng-if="!r.editing">{{r.conclusion}}</div>
                                 <textarea ng-if="r.editing" class="form-control" ng-model="r.conclusion_prev" rows="3"></textarea>
                             </td>
@@ -106,16 +106,16 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="r in reglas_flexibilidad | orderBy: 'id'">
-                            <td ng-repeat="i in r.codigo track by $index" ng-class="{'border-danger text-danger': i == 0, 'border-warning text-warning': i == 1, 'border-success text-success': i == 2}">
+                            <td ng-repeat="i in r.codigo track by $index" ng-class="{'border-danger text-danger': i == 0, 'border-warning text-warning': i == 1, 'border-success text-success': i == 2}" data-toggle="tooltip" data-placement="top" title="{{ metricas_flexibilidad[$index] }}">
                                 {{ valoraciones[i] }}
                             </td>
-                            <td ng-class="{'border-danger text-danger': r.valoracion == 0 , 'border-warning text-warning': r.valoracion == 1, 'border-success text-success': r.valoracion == 2, 'border-info text-info': r.valoracion == 3 }">
+                            <td ng-class="{'border-danger text-danger': r.valoracion == 0 , 'border-warning text-warning': r.valoracion == 1, 'border-success text-success': r.valoracion == 2, 'border-info text-info': r.valoracion == 3 }" data-toggle="tooltip" data-placement="top" title="Flexibilidad Resultante">
                                 <div ng-if="!r.editing">{{r.valoracion_descrip}}</div>
                                 <select ng-if="r.editing" class="form-control" ng-model="r.valoracion_descrip_prev">
                                     <option ng-value="v" ng-repeat="v in valoraciones">{{v}}</option>
                                 </select>
                             </td>
-                            <td>
+                            <td data-toggle="tooltip" data-placement="top" title="Conclusión">
                                 <div ng-if="!r.editing">{{r.conclusion}}</div>
                                 <textarea ng-if="r.editing" class="form-control" ng-model="r.conclusion_prev" rows="3"></textarea>
                             </td>
@@ -147,16 +147,16 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="r in reglas_satisfaccion | orderBy: 'id'">
-                            <td ng-repeat="i in r.codigo track by $index" ng-class="{'border-danger text-danger': i == 0, 'border-warning text-warning': i == 1, 'border-success text-success': i == 2}">
+                            <td ng-repeat="i in r.codigo track by $index" ng-class="{'border-danger text-danger': i == 0, 'border-warning text-warning': i == 1, 'border-success text-success': i == 2}"  data-toggle="tooltip" data-placement="top" title="{{ metricas_satisfaccion[$index] }}">
                                 {{ valoraciones[i] }}
                             </td>
-                            <td ng-class="{'border-danger text-danger': r.valoracion == 0 , 'border-warning text-warning': r.valoracion == 1, 'border-success text-success': r.valoracion == 2, 'border-info text-info': r.valoracion == 3 }">
+                            <td ng-class="{'border-danger text-danger': r.valoracion == 0 , 'border-warning text-warning': r.valoracion == 1, 'border-success text-success': r.valoracion == 2, 'border-info text-info': r.valoracion == 3 }"  data-toggle="tooltip" data-placement="top" title="Satisfacción resultante">
                                 <div ng-if="!r.editing">{{r.valoracion_descrip}}</div>
                                 <select ng-if="r.editing" class="form-control" ng-model="r.valoracion_descrip_prev">
                                     <option ng-value="v" ng-repeat="v in valoraciones">{{v}}</option>
                                 </select>
                             </td>
-                            <td>
+                            <td data-toggle="tooltip" data-placement="top" title="Conclusión">
                                 <div ng-if="!r.editing">{{r.conclusion}}</div>
                                 <textarea ng-if="r.editing" class="form-control" ng-model="r.conclusion_prev" rows="3"></textarea>
                             </td>
@@ -191,16 +191,16 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="r in reglas_jugabilidad | orderBy: 'id'">
-                            <td ng-repeat="i in r.codigo track by $index" ng-class="{'border-danger text-danger': i == 0, 'border-warning text-warning': i == 1, 'border-success text-success': i == 2, 'border-info text-info': r.valoracion == 3}">
+                            <td ng-repeat="i in r.codigo track by $index" ng-class="{'border-danger text-danger': i == 0, 'border-warning text-warning': i == 1, 'border-success text-success': i == 2, 'border-info text-info': r.valoracion == 3}" data-toggle="tooltip" data-placement="top" title="{{ metricas_jugabilidad[$index] }}">
                                 {{ valoraciones[i] }}
                             </td>
-                            <td ng-class="{'border-danger text-danger': r.valoracion == 0 , 'border-warning text-warning': r.valoracion == 1, 'border-success text-success': r.valoracion == 2, 'border-info text-info': r.valoracion == 3 }">
+                            <td ng-class="{'border-danger text-danger': r.valoracion == 0 , 'border-warning text-warning': r.valoracion == 1, 'border-success text-success': r.valoracion == 2, 'border-info text-info': r.valoracion == 3 }" data-toggle="tooltip" data-placement="top" title="Jugabilidad resultante">
                                 <div ng-if="!r.editing">{{r.valoracion_descrip}}</div>
                                 <select ng-if="r.editing" class="form-control" ng-model="r.valoracion_descrip_prev">
                                     <option ng-value="v" ng-repeat="v in valoraciones">{{v}}</option>
                                 </select>
                             </td>
-                            <td>
+                            <td data-toggle="tooltip" data-placement="top" title="Conclusión">
                                 <div ng-if="!r.editing">{{r.conclusion}}</div>
                                 <textarea ng-if="r.editing" class="form-control" ng-model="r.conclusion_prev" rows="3"></textarea>
                             </td>
