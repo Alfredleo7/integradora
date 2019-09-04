@@ -390,22 +390,59 @@ app.controller('analisisRoomsController', ['$scope', '$rootScope', 'TodoService'
             }
 
             let index_eficiencia = $scope.caracteristicas.eficiencia.sets.map(fuz_var=>fuz_var.fuzzy);
-            $scope.caracteristicas.eficiencia.fuzzy = get_fuzzy_var_by_index(REGLAS_EFICIENCIA, index_eficiencia);
             let index_efectividad = $scope.caracteristicas.efectividad.sets.map(fuz_var=>fuz_var.fuzzy);
-            $scope.caracteristicas.efectividad.fuzzy = get_fuzzy_var_by_index(REGLAS_EFECTIVIDAD, index_efectividad);
             let index_flexibilidad = $scope.caracteristicas.flexibilidad.sets.map(fuz_var=>fuz_var.fuzzy);
-            $scope.caracteristicas.flexibilidad.fuzzy = get_fuzzy_var_by_index(REGLAS_FLEXIBILIDAD, index_flexibilidad);
             let index_satisfaccion = $scope.caracteristicas.satisfaccion.sets.map(fuz_var=>fuz_var.fuzzy);
-            $scope.caracteristicas.satisfaccion.fuzzy = get_fuzzy_var_by_index(REGLAS_SATISFACCION, index_satisfaccion);
-            $scope.caracteristicas.jugabilidad.fuzzy = get_fuzzy_var_by_index(
-                REGLAS_JUGABILIDAD,
-                    [
-                        $scope.caracteristicas.eficiencia.fuzzy.resultado,
-                        $scope.caracteristicas.efectividad.fuzzy.resultado,
-                        $scope.caracteristicas.flexibilidad.fuzzy.resultado,
-                        $scope.caracteristicas.satisfaccion.fuzzy.resultado
-                    ]
-                )
+
+            TodoService.getReglaLinguisticaByCaracteristicaCodigo(1, index_eficiencia.join('')).then(function(response) {
+                $scope.caracteristicas.eficiencia.fuzzy = {
+                    resultado: response.valoracion,
+                    conclusion: response.conclusion
+                };
+
+                TodoService.getReglaLinguisticaByCaracteristicaCodigo(2, index_efectividad.join('')).then(function(response) {
+                    $scope.caracteristicas.efectividad.fuzzy = {
+                        resultado: response.valoracion,
+                        conclusion: response.conclusion
+                    };
+
+                    TodoService.getReglaLinguisticaByCaracteristicaCodigo(3, index_flexibilidad.join('')).then(function(response) {
+                        $scope.caracteristicas.flexibilidad.fuzzy = {
+                            resultado: response.valoracion,
+                            conclusion: response.conclusion
+                        };
+
+                        TodoService.getReglaLinguisticaByCaracteristicaCodigo(4, index_satisfaccion.join('')).then(function(response) {
+                            $scope.caracteristicas.satisfaccion.fuzzy = {
+                                resultado: response.valoracion,
+                                conclusion: response.conclusion
+                            };
+
+                            TodoService.getReglaLinguisticaByCaracteristicaCodigo(6, 
+                                [
+                                    $scope.caracteristicas.eficiencia.fuzzy.resultado,
+                                    $scope.caracteristicas.efectividad.fuzzy.resultado,
+                                    $scope.caracteristicas.flexibilidad.fuzzy.resultado,
+                                    $scope.caracteristicas.satisfaccion.fuzzy.resultado
+                                ].join('')
+                            ).then(function(response) {
+                                $scope.caracteristicas.jugabilidad.fuzzy = {
+                                    resultado: response.valoracion,
+                                    conclusion: response.conclusion
+                                };
+                            });
+                            
+                        });
+
+                    });
+
+                });
+
+            });
+
+
+
+
 
             $scope.get_assessment = (index) => {
                 return ['Bajo', 'Medio', 'Alto', 'Inconsistente'][index]
@@ -418,7 +455,6 @@ app.controller('analisisRoomsController', ['$scope', '$rootScope', 'TodoService'
             // $scope.caracteristicas.efectividad.interpretacion = get_interpretacion($scope.caracteristicas.efectividad.valor);
             // $scope.caracteristicas.flexibilidad.interpretacion = get_interpretacion($scope.caracteristicas.flexibilidad.valor);
             // $scope.caracteristicas.satisfaccion.interpretacion = get_interpretacion($scope.caracteristicas.satisfaccion.valor);
-            console.log($scope.caracteristicas);
         });
     }
 

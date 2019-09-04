@@ -1,0 +1,218 @@
+<div class="container-fluid my-3">
+    <h3 class="h3">Reglas linguisticas</h3>
+    <div class="card mt-3">
+        <div class="card-header">
+            <h3 class="h3">Eficiencia</h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center">Tiempo de meta</th>
+                            <th scope="col" class="text-center">Eficiencia de meta por respuestas correctas</th>
+                            <th scope="col" class="text-center">Eficiencia de metas por respuestas incorrectas</th>
+                            <th scope="col" class="text-center">Eficiencia relativa a los mejores resultados de los jugadores</th>
+                            <th scope="col" class="text-center">Eficiencia relativa a los jugadores con dificultades en el nivel</th>
+                            <th scope="col" class="text-center text-nowrap">Eficiencia resultante</th>
+                            <th scope="col" class="text-center">Conclución</th>
+                            <th scope="col" class="text-center">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="r in reglas_eficiencia | orderBy: 'id'">
+                            <td ng-repeat="i in r.codigo track by $index" ng-class="{'border-danger text-danger': i == 0, 'border-warning text-warning': i == 1, 'border-success text-success': i == 2}">
+                                {{ valoraciones[i] }}
+                            </td>
+                            <td ng-class="{'border-danger text-danger': r.valoracion == 0 , 'border-warning text-warning': r.valoracion == 1, 'border-success text-success': r.valoracion == 2, 'border-info text-info': r.valoracion == 3 }">
+                                <div ng-if="!r.editing">{{r.valoracion_descrip}}</div>
+                                <select ng-if="r.editing" class="form-control" ng-model="r.valoracion_descrip_prev">
+                                    <option ng-value="v" ng-repeat="v in valoraciones">{{v}}</option>
+                                </select>
+                            </td>
+                            <td>
+                                <div ng-if="!r.editing">{{r.conclusion}}</div>
+                                <textarea ng-if="r.editing" class="form-control" ng-model="r.conclusion_prev" rows="3"></textarea>
+                            </td>
+                            <td class="text-center">
+                                <button ng-if="!r.editing" class="btn" ng-click="r.editing = true">Editar</button>
+                                <button ng-if="r.editing" class="btn btn-danger mb-2" ng-click="r.editing = false">Cancelar</button>
+                                <button ng-if="r.editing" class="btn btn-success" ng-click="actualizar_regla(r)">Actualizar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card mt-3">
+        <div class="card-header">
+            <h3 class="h3">Efectividad</h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center">Efectividad en la meta</th>
+                            <th scope="col" class="text-center">Completitud en la meta</th>
+                            <th scope="col" class="text-center">Frecuencia de intentos para llegar a la meta</th>
+                            <th scope="col" class="text-center text-nowrap">Efectividad resultante</th>
+                            <th scope="col" class="text-center">Conclución</th>
+                            <th scope="col" class="text-center">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="r in reglas_efectividad | orderBy: 'id'">
+                            <td ng-repeat="i in r.codigo track by $index" ng-class="{'border-danger text-danger': i == 0, 'border-warning text-warning': i == 1, 'border-success text-success': i == 2}">
+                                {{ valoraciones[i] }}
+                            </td>
+                            <td ng-class="{'border-danger text-danger': r.valoracion == 0 , 'border-warning text-warning': r.valoracion == 1, 'border-success text-success': r.valoracion == 2, 'border-info text-info': r.valoracion == 3 }">
+                                <div ng-if="!r.editing">{{r.valoracion_descrip}}</div>
+                                <select ng-if="r.editing" class="form-control" ng-model="r.valoracion_descrip_prev">
+                                    <option ng-value="v" ng-repeat="v in valoraciones">{{v}}</option>
+                                </select>
+                            </td>
+                            <td>
+                                <div ng-if="!r.editing">{{r.conclusion}}</div>
+                                <textarea ng-if="r.editing" class="form-control" ng-model="r.conclusion_prev" rows="3"></textarea>
+                            </td>
+                            <td class="text-center">
+                                <button ng-if="!r.editing" class="btn" ng-click="r.editing = true">Editar</button>
+                                <button ng-if="r.editing" class="btn btn-danger mb-2" ng-click="r.editing = false">Cancelar</button>
+                                <button ng-if="r.editing" class="btn btn-success" ng-click="actualizar_regla(r)">Actualizar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card mt-3">
+        <div class="card-header">
+            <h3 class="h3">Flexibilidad</h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center">Flexibilidad por metas</th>
+                            <th scope="col" class="text-center">Flexibilidad por tiempo</th>
+                            <th scope="col" class="text-center text-nowrap">Flexibilidad resultante</th>
+                            <th scope="col" class="text-center">Conclución</th>
+                            <th scope="col" class="text-center">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="r in reglas_flexibilidad | orderBy: 'id'">
+                            <td ng-repeat="i in r.codigo track by $index" ng-class="{'border-danger text-danger': i == 0, 'border-warning text-warning': i == 1, 'border-success text-success': i == 2}">
+                                {{ valoraciones[i] }}
+                            </td>
+                            <td ng-class="{'border-danger text-danger': r.valoracion == 0 , 'border-warning text-warning': r.valoracion == 1, 'border-success text-success': r.valoracion == 2, 'border-info text-info': r.valoracion == 3 }">
+                                <div ng-if="!r.editing">{{r.valoracion_descrip}}</div>
+                                <select ng-if="r.editing" class="form-control" ng-model="r.valoracion_descrip_prev">
+                                    <option ng-value="v" ng-repeat="v in valoraciones">{{v}}</option>
+                                </select>
+                            </td>
+                            <td>
+                                <div ng-if="!r.editing">{{r.conclusion}}</div>
+                                <textarea ng-if="r.editing" class="form-control" ng-model="r.conclusion_prev" rows="3"></textarea>
+                            </td>
+                            <td class="text-center">
+                                <button ng-if="!r.editing" class="btn" ng-click="r.editing = true">Editar</button>
+                                <button ng-if="r.editing" class="btn btn-danger mb-2" ng-click="r.editing = false">Cancelar</button>
+                                <button ng-if="r.editing" class="btn btn-success" ng-click="actualizar_regla(r)">Actualizar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card mt-3">
+        <div class="card-header">
+            <h3 class="h3">Satisfacción</h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center">Preferencias de uso con respecto del nivel vs el resto de niveles</th>
+                            <th scope="col" class="text-center text-nowrap">Satisfacción resultante</th>
+                            <th scope="col" class="text-center">Conclución</th>
+                            <th scope="col" class="text-center">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="r in reglas_satisfaccion | orderBy: 'id'">
+                            <td ng-repeat="i in r.codigo track by $index" ng-class="{'border-danger text-danger': i == 0, 'border-warning text-warning': i == 1, 'border-success text-success': i == 2}">
+                                {{ valoraciones[i] }}
+                            </td>
+                            <td ng-class="{'border-danger text-danger': r.valoracion == 0 , 'border-warning text-warning': r.valoracion == 1, 'border-success text-success': r.valoracion == 2, 'border-info text-info': r.valoracion == 3 }">
+                                <div ng-if="!r.editing">{{r.valoracion_descrip}}</div>
+                                <select ng-if="r.editing" class="form-control" ng-model="r.valoracion_descrip_prev">
+                                    <option ng-value="v" ng-repeat="v in valoraciones">{{v}}</option>
+                                </select>
+                            </td>
+                            <td>
+                                <div ng-if="!r.editing">{{r.conclusion}}</div>
+                                <textarea ng-if="r.editing" class="form-control" ng-model="r.conclusion_prev" rows="3"></textarea>
+                            </td>
+                            <td class="text-center">
+                                <button ng-if="!r.editing" class="btn" ng-click="r.editing = true">Editar</button>
+                                <button ng-if="r.editing" class="btn btn-danger mb-2" ng-click="r.editing = false">Cancelar</button>
+                                <button ng-if="r.editing" class="btn btn-success" ng-click="actualizar_regla(r)">Actualizar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card mt-3">
+        <div class="card-header">
+            <h3 class="h3">Jugabilidad</h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center">Eficiencia</th>
+                            <th scope="col" class="text-center">Efectividad</th>
+                            <th scope="col" class="text-center">Flexibilidad</th>
+                            <th scope="col" class="text-center">Satisfacción</th>
+                            <th scope="col" class="text-center text-nowrap">Jugabilidad resultante</th>
+                            <th scope="col" class="text-center">Conclución</th>
+                            <th scope="col" class="text-center">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="r in reglas_jugabilidad | orderBy: 'id'">
+                            <td ng-repeat="i in r.codigo track by $index" ng-class="{'border-danger text-danger': i == 0, 'border-warning text-warning': i == 1, 'border-success text-success': i == 2, 'border-info text-info': r.valoracion == 3}">
+                                {{ valoraciones[i] }}
+                            </td>
+                            <td ng-class="{'border-danger text-danger': r.valoracion == 0 , 'border-warning text-warning': r.valoracion == 1, 'border-success text-success': r.valoracion == 2, 'border-info text-info': r.valoracion == 3 }">
+                                <div ng-if="!r.editing">{{r.valoracion_descrip}}</div>
+                                <select ng-if="r.editing" class="form-control" ng-model="r.valoracion_descrip_prev">
+                                    <option ng-value="v" ng-repeat="v in valoraciones">{{v}}</option>
+                                </select>
+                            </td>
+                            <td>
+                                <div ng-if="!r.editing">{{r.conclusion}}</div>
+                                <textarea ng-if="r.editing" class="form-control" ng-model="r.conclusion_prev" rows="3"></textarea>
+                            </td>
+                            <td class="text-center">
+                                <button ng-if="!r.editing" class="btn" ng-click="r.editing = true">Editar</button>
+                                <button ng-if="r.editing" class="btn btn-danger mb-2" ng-click="r.editing = false">Cancelar</button>
+                                <button ng-if="r.editing" class="btn btn-success" ng-click="actualizar_regla(r)">Actualizar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

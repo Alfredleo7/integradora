@@ -297,4 +297,39 @@ app.service('TodoService', function($http, $q) {
       });
       return defer.promise;
     },
+
+    getReglasLinguisticas: function(idMetrica) {
+      var defer = $q.defer();
+      $http.get('/getReglasLinguisticas/' + idMetrica).success(function(resp){
+        defer.resolve(resp);
+      }).error( function(err) {
+        defer.reject(err);
+      });
+      return defer.promise;
+    },
+
+    actualizar_regla: function(id_regla, valoracion, conclusion) {
+      var defer = $q.defer();
+      $http.put(
+        '/updateReglaLinguistica/' + id_regla, {
+          valoracion,
+          conclusion
+        }
+        ).success(function(resp){
+        defer.resolve(resp);
+      }).error(function(err) {
+        defer.reject(err);
+      });
+      return defer.promise;
+    },
+
+    getReglaLinguisticaByCaracteristicaCodigo: function(id_caracteristica, codigo) {
+      var defer = $q.defer();
+      $http.get('/getReglaLinguisticaByCaracteristicaCodigo/' + id_caracteristica + '/' + codigo).success(function(resp){
+        defer.resolve(resp);
+      }).error( function(err) {
+        defer.reject(err);
+      });
+      return defer.promise;
+    }
 }});

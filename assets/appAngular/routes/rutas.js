@@ -40,6 +40,10 @@ app.config(['$routeProvider',
       templateUrl: '/appAngular/views/analisisNivel.html',
       controller: 'analisisNivelController'
     }).
+    when('/reglas', {
+      templateUrl: '/appAngular/views/reglas.html',
+      controller: 'reglasController'
+    }).
     otherwise({
       redirectTo: '/',
       caseInsensitiveMatch: true

@@ -1984,7 +1984,7 @@ REGLAS_JUGABILIDAD = [
                     resultado: 0,
                     conclusion: 'Bajo todas las reglas anteriores se determinó que esteste nivel, no cumple con la metrica de jugabilidad'
                 },
-                // Inconsistente
+                // INCONSISTENTE
                 {
                     resultado: 3,
                     conclusion: 'No se puede dar un valoración si hay inconsistencias'
@@ -2007,6 +2007,11 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ],
             // ALTA
@@ -2026,6 +2031,35 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // INCONSISTENTE
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ]
         ],
@@ -2049,6 +2083,11 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ],
             // MEDIA
@@ -2068,6 +2107,11 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ],
             // ALTA
@@ -2087,6 +2131,35 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // INCONSISTENTE
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ]
         ],
@@ -2110,6 +2183,11 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ],
             // MEDIA
@@ -2129,6 +2207,11 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ],
             // ALTA
@@ -2148,6 +2231,135 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // INCONSISTENTE
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ]
+        ],
+        // INCONSISTENTE
+        [
+            // FLEXIBILIDAD
+            // BAJA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // MEDIA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // ALTA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // INCONSISTENTE
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ]
         ]
@@ -2175,6 +2387,11 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ],
             // MEDIA
@@ -2194,6 +2411,11 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ],
             // ALTA
@@ -2213,6 +2435,35 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // INCONSISTENTE
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ]
         ],
@@ -2236,6 +2487,11 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ],
             // MEDIA
@@ -2255,6 +2511,11 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ],
             // ALTA
@@ -2274,6 +2535,35 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // INCONSISTENTE
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ]
         ],
@@ -2297,6 +2587,11 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: 'Bajo todas las reglas anteriores se determinó que esta videojuego, no cumple con la metrica de jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ],
             // MEDIA
@@ -2316,6 +2611,11 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: ''
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ],
             // ALTA
@@ -2335,6 +2635,135 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 0,
                     conclusion: ''
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // INCONSISTENTE
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ]
+        ],
+        // INCONSISTENTE
+        [
+            // FLEXIBILIDAD
+            // BAJA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // MEDIA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // ALTA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // INCONSISTENTE
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ]
         ]
@@ -2362,6 +2791,11 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 1,
                     conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple medianamente con la metrica de Jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ],
             // MEDIA
@@ -2381,6 +2815,11 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 2,
                     conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple con la metrica de Jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ],
             // ALTA
@@ -2400,6 +2839,35 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 2,
                     conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple con la metrica de Jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // INCONSISTENTE
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ]
         ],
@@ -2423,6 +2891,11 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 1,
                     conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple medianamente con la metrica de Jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ],
             // MEDIA
@@ -2442,6 +2915,11 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 2,
                     conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple con la metrica de Jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ],
             // ALTA
@@ -2461,6 +2939,35 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 2,
                     conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple con la metrica de Jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // INCONSISTENTE
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ]
         ],
@@ -2484,6 +2991,11 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 1,
                     conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple medianamente la metrica de Jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ],
             // MEDIA
@@ -2503,6 +3015,11 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 2,
                     conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple con las metrica de Jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ],
             // ALTA
@@ -2522,6 +3039,135 @@ REGLAS_JUGABILIDAD = [
                 {
                     resultado: 2,
                     conclusion: 'Bajo todos los parametros anteriores, se concluye que el nivel actual, cumple con las metrica de Jugabilidad'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // INCONSISTENTE
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ]
+        ],
+        // INCONSISTENTE
+        [
+            // FLEXIBILIDAD
+            // BAJA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // MEDIA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // ALTA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // INCONSISTENTE
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
                 }
             ]
         ]
@@ -2603,6 +3249,30 @@ REGLAS_JUGABILIDAD = [
                     resultado: 3,
                     conclusion: 'No se puede dar una valoración si existen incosistencias'
                 }
+            ],
+            // INCONSISTENTE
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                },
+                // INCOSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                }
             ]
         ],
         // MEDIA
@@ -2657,6 +3327,30 @@ REGLAS_JUGABILIDAD = [
                 }
             ],
             // ALTA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                },
+                // INCOSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                }
+            ],
+            // INCONSISTENTE
             [
                 // SATISFACCION
                 // BAJA
@@ -2755,7 +3449,170 @@ REGLAS_JUGABILIDAD = [
                     resultado: 3,
                     conclusion: 'No se puede dar una valoración si existen incosistencias'
                 }
+            ],
+            // INCONSISTENTE
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                },
+                // INCOSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar una valoración si existen incosistencias'
+                }
+            ]
+        ],
+        // INCONSISTENTE
+        [
+            // FLEXIBILIDAD
+            // BAJA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // MEDIA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // ALTA
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
+            ],
+            // INCONSISTENTE
+            [
+                // SATISFACCION
+                // BAJA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // MEDIA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // ALTA
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                },
+                // INCONSISTENTE
+                {
+                    resultado: 3,
+                    conclusion: 'No se puede dar un valoración si hay inconsistencias'
+                }
             ]
         ]
     ]
 ]
+
+
+// const fs = require('fs');
+
+
+
+// REGLAS_JUGABILIDAD.forEach(
+//     (meta, x) => {
+//         meta.forEach(
+//             (e_res_corr, y) => {
+//                 e_res_corr.forEach(
+//                     (e_res_incorr, z) => {
+//                         e_res_incorr.forEach(
+//                             (e_rel_jug, a) => {
+//                                 fs.appendFileSync(
+//                                     'jugabilidad.txt',
+//                                     `
+// INSERT INTO regla (
+// valoracion,
+// conclusion,
+// codigo,
+// id_caracteristica
+// )
+// VALUES (
+// ${e_rel_jug.resultado},
+// '${e_rel_jug.conclusion}',
+// '${x}${y}${z}${a}',
+// 6
+// );
+//                                     `
+//                                 )
+//                             }
+//                         )
+//                     }
+//                 )
+//             }
+//         )
+//     }
+// )

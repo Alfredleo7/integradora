@@ -478,5 +478,28 @@ module.exports = {
 
     res.json(escenarios_resp);
   },
+
+  // PROYECTO LÓGICA DIFUSA
+
+  getReglasLinguisticas: async function(req, res){
+    var regla = await Regla.find({id_caracteristica: req.params.idMetrica});
+    res.json(regla);
+  },
+  
+  updateReglaLinguistica: async function(req, res){
+    var regla = await Regla.update({id: req.params.idRegla}).set({
+      valoracion: req.body.valoracion,
+      conclusion: req.body.conclusion
+    })
+    res.json(regla);
+  },
+
+  getReglaLinguisticaByCaracteristicaCodigo: async function(req, res) {
+    var reglas = await Regla.find({id_caracteristica: req.params.idCaracteristica, codigo: req.params.codigo});
+    if(reglas.length)
+      res.json(reglas[0]);
+    else
+      res.json(null);
+  }
 };
 

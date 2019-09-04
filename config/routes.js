@@ -52,6 +52,13 @@ module.exports.routes = {
   'GET /jugadoresExceptAnEscenario/:idEscenario':{ controller: 'dashboard/GetInformacionController', action:'jugadoresExceptAnEscenario' },
 
 
+  // PROYECTO LOGICA DIFUSA
+
+  'GET /getReglasLinguisticas/:idMetrica':{controller: 'dashboard/GetInformacionController', action: 'getReglasLinguisticas'},
+  'GET /getReglaLinguisticaByCaracteristicaCodigo/:idCaracteristica/:codigo':{controller: 'dashboard/GetInformacionController', action: 'getReglaLinguisticaByCaracteristicaCodigo'},
+  'PUT /updateReglaLinguistica/:idRegla': {controller: 'dashboard/GetInformacionController', action: 'updateReglaLinguistica'}, 
+
+
   //'GET /forms':            { action: 'dashboard/view-forms' },
   //'GET /charts':            { view: 'pages/dashboard/charts' },
 
