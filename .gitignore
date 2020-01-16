@@ -133,3 +133,6 @@ lib-cov
 *.pid
 
 .env
+
+
+generacion_de_datos/node_modules/*
