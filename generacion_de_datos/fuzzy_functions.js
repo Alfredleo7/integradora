@@ -365,5 +365,7 @@ let sets_satisfaccion = {
 module.exports = {
     fuzzification_variable,
     sets_eficiencia,
-    sets_efectividad
+    sets_efectividad,
+    sets_flexibilidad,
+    sets_satisfaccion
 }

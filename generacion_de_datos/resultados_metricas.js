@@ -1,7 +1,7 @@
 // Esta es una copia del archivo 'assets/appAngular/controllers/resultados_metricas.js'
 
 function pregunta1() {
-	console.log("Pregunta 1: " + $scope.questions[m].pregunta + " - con ID: " + $scope.questions[m].id);
+	//console.log("Pregunta 1: " + $scope.questions[m].pregunta + " - con ID: " + $scope.questions[m].id);
 
 	var t_play_status = "", num_try_status = "", completado = false;
 
@@ -19,9 +19,9 @@ function pregunta1() {
 
 		if (t_play_prom <= q_mid) t_play_status = "ALTO";
 		else t_play_status = "BAJO";
-		console.log("Promedio de juego: " + t_play_prom);
-		console.log("Cuartil 2: " + q_mid);
-		console.log("Status: " + t_play_status);
+		//console.log("Promedio de juego: " + t_play_prom);
+		//console.log("Cuartil 2: " + q_mid);
+		//console.log("Status: " + t_play_status);
 
 		//INTENTOS
 		num_try_prom = num_try_prom / $scope.level.length;
@@ -29,14 +29,14 @@ function pregunta1() {
 
 		if (num_try_prom <= q_mid) num_try_status = "ALTO";
 		else num_try_status = "BAJO";
-		console.log("Promedio de intentos: " + num_try_prom);
-		console.log("Cuartil 2: " + q_mid);
-		console.log("Status: " + num_try_status);
+		//console.log("Promedio de intentos: " + num_try_prom);
+		//console.log("Cuartil 2: " + q_mid);
+		//console.log("Status: " + num_try_status);
 	}
 	//RESPUESTA
 	if (t_play_status == "ALTO" && t_play_status == "ALTO") $scope.questions[0].respuesta = "Si es divertido";
 	else $scope.questions[1].respuesta = "Normal";
-	console.log("Supuesta respuesta: " + $scope.questions[0].respuesta);
+	//console.log("Supuesta respuesta: " + $scope.questions[0].respuesta);
 }
 
 //EFICIENCIA
@@ -55,7 +55,7 @@ function EficienciaMetaPorIncorrectas(incorrectas_ok, tiempo_juego) { //Respuest
 }
 //Eficiencia relativa a los mejores resultados de jugadores (id: 4)
 function EficienciaRelativaUsuarioOK(cont_best_time, total_jugadores) { //Número de mejores jugadores vs total de jugadores
-	//console.log('Eficiencia relativa a los mejores jugadpres', (cont_best_time / total_jugadores) * 100);
+	////console.log('Eficiencia relativa a los mejores jugadpres', (cont_best_time / total_jugadores) * 100);
 	return (cont_best_time / total_jugadores) * 100;
 	//return 50;
 }
@@ -91,8 +91,8 @@ function AccesibilidadPorMetas(rooms_default, rooms_rest, level, jugadores_room_
 	var efectividad_default = 0, efectividad_rest = 0, efectividad_room = 0, diferencia = 0;
 
 	//CALCULO DE LA EFECTIVIDAD DEL ROOM POR DEFAULT
-	//console.log('Jugadores por default',jugadores_room_default);
-	//console.log('Jugadores por resto',jugadores_room_rest);
+	////console.log('Jugadores por default',jugadores_room_default);
+	////console.log('Jugadores por resto',jugadores_room_rest);
 
 	for (var i = 0; i < level.length; i++) {
 		for (var j = 0; j < jugadores_room_default.length; j++) {
@@ -133,8 +133,8 @@ function AccesibilidadPorMetas(rooms_default, rooms_rest, level, jugadores_room_
 
 
 //CALCULO DE LA EFECTIVIDAD DEL ROOM POR DEFAULT
-	//console.log('Jugadores por default',jugadores_room_default);
-	//console.log('Jugadores por resto',jugadores_room_rest);
+	////console.log('Jugadores por default',jugadores_room_default);
+	////console.log('Jugadores por resto',jugadores_room_rest);
 
 	for (var i = 0; i < level.length; i++) {
 		for (var j = 0; j < jugadores_room_rest.length; j++) {
@@ -144,7 +144,7 @@ function AccesibilidadPorMetas(rooms_default, rooms_rest, level, jugadores_room_
 			}
 		}
 	}
-		//console.log(nivel_usuario_rest);
+		////console.log(nivel_usuario_rest);
 	for (var i = 0; i < nivel_usuario_rest.length; i++) {
 		//De los usuarios que si vieron las historias, cuantos de ellos completaron el nivel
 		if (nivel_usuario_rest[i].estado == "completado") {
@@ -242,7 +242,7 @@ function PreferenciaUso(n_completos, nivel, niveles, level_users) { //Escala de 
 	var preferencias_menor=0;
 	var preferencia=0;
 	completitud_nivel = CompletitudMeta(n_completos, nivel.length) / 100;
-	console.log('Completitud de la meta de este nivel',completitud_nivel);
+	//console.log('Completitud de la meta de este nivel',completitud_nivel);
 
 	for (var i = 0; i < niveles.length; i++) {
 		for (var j = 0; j < level_users.length; j++) {
@@ -252,23 +252,23 @@ function PreferenciaUso(n_completos, nivel, niveles, level_users) { //Escala de 
 			}
 		}
 		//promedio de un nivel
-		//console.log(n_nivel_OK, n_nivel)
-		console.log('Completitd de meta por nivel',i,"",CompletitudMeta(n_nivel_OK,n_nivel)/100);
+		////console.log(n_nivel_OK, n_nivel)
+		//console.log('Completitd de meta por nivel',i,"",CompletitudMeta(n_nivel_OK,n_nivel)/100);
 		diferencia = completitud_nivel - CompletitudMeta(n_nivel_OK, n_nivel) / 100;
-		console.log('diferencia: ',diferencia);
+		//console.log('diferencia: ',diferencia);
 		if (diferencia<0) preferencias_mayor++;
 		else preferencias_menor++;
 
 		 //diferencia=diferencia * (-1);
 
-		//console.log(diferencia)
+		////console.log(diferencia)
 		//eficiencia_nivel = eficiencia_nivel + diferencia;
 
 	}
 		eficiencia_nivel = (preferencias_menor/niveles.length);
 		eficiencia_nivel= eficiencia_nivel*100;
 	//eficiencia_nivel = (eficiencia_nivel / (niveles.length - 1))*100;
-	console.log('preferencia total: ',eficiencia_nivel, "p_m",preferencias_mayor,"p_m",preferencias_menor)
+	//console.log('preferencia total: ',eficiencia_nivel, "p_m",preferencias_mayor,"p_m",preferencias_menor)
 	return eficiencia_nivel;
 }
 
@@ -315,5 +315,7 @@ module.exports = {
     EfectividadMeta,
     CompletitudMeta,
     FrecuenciaIntentosMeta,
-    AccesibilidadPorMetas
+	AccesibilidadPorMetas,
+	AccesibilidadPorTiempo,
+	PreferenciaUso
 }
