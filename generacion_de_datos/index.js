@@ -101,7 +101,7 @@ async function main() {
                                     //Solo se toma en cuenta los usuarios que competaron el nivel
                                     if(level.estado == "completado") {
                                         intentos_ok += level.intentos;
-                                        correctas_ok += level.correctas_ok;
+                                        correctas_ok += level.correctas;
                                         respuestas_ok.push(level.correctas);
                                         incorrectas_ok += level.incorrectas;
                                         corrida_incorrectas_por_minutos.push( level.incorrectas / ( level.tiempo_juego / 60 ) );
