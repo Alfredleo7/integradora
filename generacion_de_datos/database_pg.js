@@ -200,5 +200,56 @@ module.exports = {
             return reglas[0];
         else
             return null;
+    },
+    save_registro: async (registro) => {
+        let campos = [
+            'escenario',
+            'escenario_description',
+            'juego',
+            'juego_nombre',
+            'nivel',
+            'nivel_nombre',
+            'tiempo_juego',
+            'n_wrong_prom',
+            'n_right_prom',
+            'num_try_prom',
+            'intentos_ok',
+            'correctas_ok',
+            'incorrectas_ok',
+            'tiempo_juego_ok',
+            'eficiencia_valoracion',
+            'eficiencia_conclusion',
+            'efectividad_valoracion',
+            'efectividad_conclusion',
+            'flexibilidad_valoracion',
+            'flexibilidad_conclusion',
+            'satisfaccion_valoracion',
+            'satisfaccion_conclusion',
+            'jugabilidad_valoracion',
+            'jugabilidad_conclusion',
+        ];
+        let query = `
+INSERT INTO ML (
+${campos.join(',\n')}
+)
+VALUES (
+    ${
+        campos.map(
+            campo => {
+                let value = registro[campo];
+                if(typeof value == 'number') {
+                    if(isNaN(value)) return 'null';
+                    else return Number(value.toFixed(2));
+                }
+                else
+                    return `'${value}'`
+            }
+        ).join(',\n')
+    }
+)
+`;
+        console.log(query);
+        await con.query(query);
+        console.log('Guardado')
     }
 };

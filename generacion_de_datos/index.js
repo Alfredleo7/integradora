@@ -387,7 +387,7 @@ async function main() {
                                 jugabilidad_conclusion: caracteristicas.jugabilidad.fuzzy.conclusion
 
                             }
-                            console.log(new_registro)
+                            db.save_registro(new_registro);
                         }
                     )
                 }
