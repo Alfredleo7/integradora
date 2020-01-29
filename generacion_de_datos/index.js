@@ -362,8 +362,11 @@ async function main() {
                             };
                             let new_registro = {
                                 escenario: escenario.id,
+                                escenario_description: escenario.descripcion,
                                 juego: game.id,
+                                juego_nombre: game.nombre,
                                 nivel: _level.id,
+                                nivel_nombre: _level.nombre,
                                 tiempo_juego,
                                 n_wrong_prom,
                                 n_right_prom,
