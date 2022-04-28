@@ -10,7 +10,7 @@
     "@sailshq/socket.io-redis": "^5.2.0",
     "ajv": "^6.0.0",
     "angular-datatables": "^0.6.2",
-    "async": "^2.0.1",
+    "async": "^2.6.4",
     "pg": "^7.4.3",
     "sails": "^1.0.2",
     "sails-hook-apianalytics": "^2.0.0",
